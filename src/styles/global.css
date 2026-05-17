@@ -351,17 +351,14 @@ section.block { padding: var(--space-section) 0; }
 .step-text p { margin-top: 20px; font-size: 17px; color: var(--c-ink-soft); max-width: 460px; line-height: 1.65; }
 
 .step-visual {
-  aspect-ratio: 4 / 3;
-  border-radius: var(--r-lg);
-  background: var(--c-bg-card);
-  border: 1px solid var(--c-line);
-  box-shadow: var(--shadow-md);
-  padding: 28px;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+  aspect-ratio: auto;
   display: flex;
-  flex-direction: column;
-  gap: 14px;
-  position: relative;
-  overflow: hidden;
+  justify-content: center;
+  align-items: center;
 }
 .mock-row {
   display: flex;
@@ -1053,4 +1050,285 @@ footer { border-top: 1px solid var(--c-line); padding: 48px 0 40px; background: 
   .lockscreen-mockup { max-width: 240px; }
   .lockscreen-clock .bigclock { font-size: 60px; }
   .pricing-toggle button { padding: 9px 14px; font-size: 12.5px; }
+}
+
+/* PHONE FRAME (reusable iPhone-15-Pro mockup) ────────── */
+.phone-frame {
+  max-width: 280px;
+  margin: 0 auto;
+  aspect-ratio: 9 / 19.5;
+  background: #fff;
+  border-radius: 38px;
+  box-shadow: 0 30px 80px -20px rgba(10, 37, 64, 0.18), 0 0 0 8px #1a1a2e, 0 0 0 9px #2a2a3a;
+  color: var(--c-ink);
+  font-family: var(--f-sans);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.phone-island {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95px;
+  height: 28px;
+  background: #000;
+  border-radius: 18px;
+  z-index: 2;
+}
+
+.phone-statusbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 22px 0;
+  color: var(--c-ink);
+}
+.phone-statusbar .time-small {
+  font-size: 13px;
+  font-weight: 600;
+}
+.phone-statusbar .indicators {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.phone-screen {
+  flex: 1;
+  padding: 50px 16px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow: hidden;
+}
+
+.phone-app-header {
+  font-family: var(--f-serif);
+  font-size: 22px;
+  line-height: 1.1;
+  color: var(--c-ink);
+  letter-spacing: -0.01em;
+  padding-bottom: 6px;
+}
+
+.phone-app-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: hidden;
+}
+
+/* Step 1 — My documents ──────────────────────────────── */
+.doc-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: var(--c-bg-warm);
+  border-radius: 12px;
+}
+.doc-icon {
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--f-serif);
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.doc-icon-rx { background: #D9E3EE; color: var(--c-ink); }
+.doc-icon-vacc { background: #E1F0E8; color: var(--c-success); }
+.doc-icon-lab { background: #F5EBD4; color: var(--c-accent); }
+
+.doc-meta { flex: 1; min-width: 0; }
+.doc-title { font-size: 13px; font-weight: 600; color: var(--c-ink); }
+.doc-sub { font-size: 11px; color: var(--c-ink-soft); margin-top: 2px; }
+.doc-badge {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 3px 7px;
+  border-radius: 99px;
+  flex-shrink: 0;
+}
+.doc-badge.translated { background: #F0F7F3; color: var(--c-success); }
+.doc-badge.reviewing { background: #FAF4E5; color: var(--c-accent); }
+
+.doc-add {
+  margin-top: auto;
+  padding: 11px;
+  background: var(--c-ink);
+  color: #fff;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 500;
+  border: 0;
+  cursor: default;
+}
+
+/* Step 2 — Live translation ──────────────────────────── */
+.live-active {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--c-success);
+  font-weight: 500;
+  padding: 0 4px;
+}
+.live-dot {
+  width: 6px; height: 6px;
+  background: var(--c-success);
+  border-radius: 50%;
+  animation: pulse 1.6s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+.live-bubble {
+  padding: 9px 12px;
+  border-radius: 14px;
+  font-size: 13px;
+  max-width: 85%;
+}
+.live-bubble-label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+  opacity: 0.6;
+}
+.live-bubble-text {
+  font-family: var(--f-serif);
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.2;
+}
+.live-bubble-you {
+  align-self: flex-start;
+  background: var(--c-bg-warm);
+  color: var(--c-ink);
+}
+.live-bubble-doctor {
+  align-self: flex-end;
+  background: var(--c-ink);
+  color: #fff;
+}
+.live-bubble-you-back, .live-bubble-doctor-back { opacity: 0.55; }
+.live-mic {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  padding: 14px;
+}
+.live-mic .mic-dot {
+  width: 5px; height: 5px;
+  background: var(--c-accent);
+  border-radius: 50%;
+  animation: pulse 1.4s ease-in-out infinite;
+}
+.live-mic .mic-dot:nth-child(2) { animation-delay: 0.2s; }
+.live-mic .mic-dot:nth-child(3) { animation-delay: 0.4s; }
+
+/* Step 3 — Glossary ─────────────────────────────────── */
+.glossary-search {
+  font-size: 12px;
+  color: var(--c-ink-soft);
+  padding: 9px 12px;
+  background: var(--c-bg-warm);
+  border-radius: 10px;
+}
+.glossary-card {
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: var(--c-bg);
+  border: 1px solid var(--c-line);
+}
+.glossary-term {
+  font-family: var(--f-serif);
+  font-size: 16px;
+  color: var(--c-ink);
+  font-weight: 500;
+}
+.glossary-def {
+  font-size: 11px;
+  color: var(--c-ink-soft);
+  line-height: 1.4;
+  margin-top: 4px;
+}
+.glossary-when {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--c-accent);
+}
+.glossary-card-emergency {
+  border-color: rgba(192, 57, 43, 0.25);
+  background: #FCF2F0;
+}
+.glossary-card-emergency .glossary-when { color: #C0392B; }
+
+/* Step 4 — Insurance ────────────────────────────────── */
+.insurance-card {
+  padding: 12px;
+  background: var(--c-ink);
+  color: #fff;
+  border-radius: 12px;
+}
+.insurance-label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+}
+.insurance-name {
+  font-family: var(--f-serif);
+  font-size: 15px;
+  margin-top: 2px;
+}
+.insurance-id {
+  font-size: 10px;
+  color: rgba(255,255,255,0.55);
+  margin-top: 4px;
+  font-family: ui-monospace, monospace;
+}
+.insurance-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--c-bg);
+  border: 1px solid var(--c-line);
+}
+.insurance-svc { flex: 1; min-width: 0; }
+.insurance-svc-title { font-size: 12px; font-weight: 600; color: var(--c-ink); }
+.insurance-svc-sub { font-size: 10px; color: var(--c-ink-soft); margin-top: 1px; }
+.insurance-cost {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 4px 8px;
+  border-radius: 99px;
+  flex-shrink: 0;
+}
+.insurance-covered { background: #F0F7F3; color: var(--c-success); }
+.insurance-partial { background: #FAF4E5; color: var(--c-accent); }
+.insurance-not { background: #FCF2F0; color: #C0392B; }
+
+@media (max-width: 880px) {
+  .phone-frame { max-width: 240px; }
 }

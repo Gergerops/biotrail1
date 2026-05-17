@@ -1,0 +1,45 @@
+---
+/**
+ * PhoneFrame — reusable iPhone-15-Pro-style mockup container.
+ * Used by the Solution-section step visuals to keep all in-app screens
+ * visually consistent with the Emergency lockscreen-mockup.
+ *
+ * Visual chrome (frame, island, statusbar) is fixed; the app's content
+ * goes inside the <slot /> under a serif app header.
+ */
+interface Props {
+  time?: string;
+  appName: string;
+}
+const { time = '9:41', appName } = Astro.props;
+---
+
+<div class="phone-frame" aria-hidden="true">
+  <div class="phone-island"></div>
+  <div class="phone-statusbar">
+    <span class="time-small">{time}</span>
+    <span class="indicators">
+      <svg width="17" height="11" viewBox="0 0 17 11" fill="currentColor" aria-hidden="true">
+        <rect x="0" y="7" width="3" height="4" rx="0.5"/>
+        <rect x="4" y="5" width="3" height="6" rx="0.5"/>
+        <rect x="8" y="3" width="3" height="8" rx="0.5"/>
+        <rect x="12" y="0" width="3" height="11" rx="0.5"/>
+      </svg>
+      <svg width="16" height="11" viewBox="0 0 16 11" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <path d="M1.5 4.5C3.5 2.5 6 1.5 8 1.5C10 1.5 12.5 2.5 14.5 4.5M3.5 6.5C5 5 6.5 4.5 8 4.5C9.5 4.5 11 5 12.5 6.5M5.5 8.5C6.5 7.5 7.5 7 8 7C8.5 7 9.5 7.5 10.5 8.5"/>
+        <circle cx="8" cy="10" r="1" fill="currentColor"/>
+      </svg>
+      <svg width="24" height="11" viewBox="0 0 24 11" fill="none" aria-hidden="true">
+        <rect x="0.5" y="0.5" width="20" height="10" rx="2" stroke="currentColor" stroke-opacity="0.5"/>
+        <rect x="2" y="2" width="17" height="7" rx="1" fill="currentColor"/>
+        <rect x="21" y="3.5" width="1.5" height="4" rx="0.5" fill="currentColor" fill-opacity="0.5"/>
+      </svg>
+    </span>
+  </div>
+  <div class="phone-screen">
+    <div class="phone-app-header">{appName}</div>
+    <div class="phone-app-body">
+      <slot />
+    </div>
+  </div>
+</div>
