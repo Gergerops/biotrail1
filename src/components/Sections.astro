@@ -537,6 +537,53 @@ const team = [
   </div>
 </section>
 
+<!-- ─────── TESTIMONIALS ─────── -->
+<section class="block testimonials">
+  <div class="container">
+    <div class="testimonials-header reveal">
+      <span class="eyebrow">{dict.testimonials.eyebrow}</span>
+      <h2>{dict.testimonials.title}</h2>
+    </div>
+    <div class="testimonials-scroll reveal">
+      {dict.testimonials.list.map((item) => (
+        <div class="testimonial-card">
+          <div class="testimonial-stars" aria-hidden="true">★★★★★</div>
+          <p class="testimonial-body">{item.quote}</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style={`background: ${item.color};`}>{item.initial}</div>
+            <div>
+              <div class="testimonial-name">{item.name}</div>
+              <div class="testimonial-meta">{item.meta}</div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+    <div class="testimonials-disclaimer">{dict.testimonials.disclaimer}</div>
+  </div>
+</section>
+
+<!-- ─────── FAQ ─────── -->
+<section class="block faq">
+  <div class="container container-narrow">
+    <div class="faq-header reveal">
+      <span class="eyebrow">{dict.faq.eyebrow}</span>
+      <h2>{dict.faq.title}</h2>
+    </div>
+    <div class="faq-list reveal">
+      {dict.faq.list.map((item) => (
+        <details class="faq-item">
+          <summary>
+            <span>{item.q}</span>
+            <span class="faq-toggle" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-answer">{item.a}</div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
 <!-- ─────── ABOUT ─────── -->
 <section class="block about">
   <div class="container">

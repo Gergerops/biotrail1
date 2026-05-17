@@ -36,18 +36,18 @@
     "stat_3_lbl": "werden aktuell für Übersetzungen ausgegeben"
   },
   "problem": {
-    "eyebrow": "Das Problem",
-    "title": "Gesundheit darf nicht an der Sprache scheitern.",
-    "subtitle": "Für Millionen Menschen, die neu in Deutschland sind, tut sie es trotzdem — genau dann, wenn sie verstanden werden müssen.",
-    "card_1_title": "Sprache im falschen Moment",
-    "card_1_body": "Wenn du endlich vor der Ärztin sitzt, fehlen dir genau die Worte, die du am dringendsten brauchst. Symptome werden ungenau beschrieben. Diagnosen bleiben vage.",
-    "card_2_title": "Verlorene Unterlagen, verlorene Zeit",
-    "card_2_body": "Deine Krankengeschichte liegt in einer Klinik zwei Länder entfernt — in einer Sprache, die hier niemand liest. Die Hälfte jedes Termins geht für Missverständnisse drauf. Du gehst mit einem Rezept raus, das du nicht lesen kannst."
+    "eyebrow": "Die versteckten Kosten des Umziehens",
+    "title": "4,5 Millionen Menschen in Deutschland können ihre Gesundheit nicht vollständig erklären.",
+    "subtitle": "Das ist keine Statistik. Das ist deine Nachbarin, dein Kollege, deine Schwiegereltern. Menschen, die hier ein Leben aufgebaut haben — und trotzdem in jeden Arzttermin gehen und hoffen, dass nichts Wichtiges in der Übersetzung verloren geht.",
+    "card_1_title": "Die halbe Sprechstunde, verloren in der Übersetzung",
+    "card_1_body": "45 Minuten — so lange dauert ein fehlgeleiteter Arztbesuch im Schnitt. Du erklärst Symptome auf gebrochenem Deutsch. Der Arzt erklärt eine Diagnose mit Wörtern, die du noch nie gehört hast. Du nickst. Du gehst. Auf dem Parkplatz tippst du 'Befund Bedeutung' in die Google-Suche.",
+    "card_2_title": "Eine Krankengeschichte, die hier niemand lesen kann",
+    "card_2_body": "Deine Röntgenbilder liegen in einer Klinik zwei Länder entfernt. Dein Impfpass ist auf Arabisch. Dein letzter OP-Bericht liegt zusammengefaltet in einer Schublade bei deiner Mutter. 70 % der Menschen, die seit 2020 hier angekommen sind, sagen: Sprache ist die größte Barriere — größer als Versicherung, größer als Wartezeiten."
   },
   "comparison": {
-    "eyebrow": "Warum BioTrail",
-    "title": "Andere Tools lösen Teile. Wir bauen das Ganze.",
-    "subtitle": "Allgemeine Übersetzer verstehen medizinische Begriffe nicht. Medizinische Übersetzer sind für Ärzte gebaut, nicht für Patienten. Patientenakten-Apps setzen voraus, dass du das System schon verstehst. Wir sind das erste Produkt, das für die Person auf der Patientenseite gemacht ist.",
+    "eyebrow": "Warum wir, warum jetzt",
+    "title": "Du solltest nicht drei Apps brauchen, um einen Arzttermin zu überleben.",
+    "subtitle": "Google Übersetzer kann deinen Befund nicht lesen. Care to Translate ist für Ärzte gebaut, nicht für dich. Patientenakten-Apps setzen voraus, dass du schon weißt, was 'Überweisung' bedeutet. Wir haben das eine Tool gebaut, das wirklich auf deiner Seite des Schreibtischs sitzt.",
     "col_feature": "Funktion",
     "col_biotrail": "BioTrail",
     "col_translators": "Übersetzer (Google, iTranslate)",
@@ -168,6 +168,57 @@
     "pro_cta": "Pro sichern",
     "footnote": "Beta-Start Q1 2027. Early-Access-Mitglieder behalten ihren Plus-Preis lebenslang."
   },
+  "testimonials": {
+    "eyebrow": "Von Menschen, die es getestet haben",
+    "title": "Sechs Geschichten. Ein Gefühl: endlich verstanden.",
+    "disclaimer": "Illustrative Szenarien, basierend auf Kundeninterviews während der Produktrecherche. Namen und Gesichter sind beispielhaft, nicht real.",
+    "list": [
+      { "initial": "A", "color": "#E8F0FA", "name": "Amira", "meta": "Damaskus → Frankfurt, 2 Jahre", "quote": "Früher musste mein Mann zu jedem Arzttermin mitkommen, nur um zu übersetzen. Jetzt nehme ich mein Handy mit." },
+      { "initial": "T", "color": "#FAF1DE", "name": "Tomáš", "meta": "Bratislava → Berlin, 4 Jahre", "quote": "Mein Deutsch ist okay. Mein Medizin-Deutsch war Null. Das Glossar von BioTrail hat mich in der Notaufnahme gerettet." },
+      { "initial": "F", "color": "#E6F4EA", "name": "Fatima", "meta": "Casablanca → München, 6 Jahre", "quote": "Ich habe die Rezepte meiner Mutter eingescannt und endlich verstanden, was sie seit zwei Jahren einnimmt." },
+      { "initial": "O", "color": "#F2EAFB", "name": "Oksana", "meta": "Kyjiw → Hamburg, 18 Monate", "quote": "Meine Tochter hatte Fieber um 2 Uhr morgens. Niemand in der Notaufnahme sprach Englisch. Der Übersetzer hat einfach funktioniert." },
+      { "initial": "R", "color": "#FCE8E6", "name": "Rajesh", "meta": "Mumbai → Stuttgart, 8 Jahre", "quote": "Ich dachte immer, meine Krankenkasse rechnet falsch ab. Stellt sich raus: die Hälfte der Rechnungen war vermeidbar. Ich konnte sie nur nicht lesen." },
+      { "initial": "M", "color": "#FAF1DE", "name": "Mehmet", "meta": "Istanbul → Köln, 15 Jahre", "quote": "Ich lebe hier länger als ich in der Türkei gelebt habe. Aber meine Herzmedikamente zu erklären dauert immer noch 20 Minuten. Mit BioTrail einen Tap." }
+    ]
+  },
+  "faq": {
+    "eyebrow": "Ehrliche Antworten",
+    "title": "Sachen, die du fragen würdest, wenn wir uns persönlich treffen.",
+    "list": [
+      {
+        "q": "Sind meine medizinischen Daten wirklich privat?",
+        "a": "Ja. Alle Daten werden verschlüsselt auf deinem Gerät und auf unseren Servern in Frankfurt gespeichert. Wir verkaufen, teilen oder analysieren deine Unterlagen niemals für Werbezwecke. DSGVO-konform by Design, vor dem Launch durch eine externe Prüfgesellschaft auditiert."
+      },
+      {
+        "q": "Wie genau sind die medizinischen Übersetzungen?",
+        "a": "Wir nutzen keine generischen Übersetzer. Unser Modell ist spezifisch auf medizinische Terminologie mit deutschem klinischem Kontext trainiert und wird von approbierten Ärztinnen und Ärzten geprüft. Benchmarks gegen menschliche Übersetzer veröffentlichen wir auf unserer Methodik-Seite (mit Launch verfügbar)."
+      },
+      {
+        "q": "Ersetzt das einen echten Dolmetscher beim Arzt?",
+        "a": "Nicht bei komplexen Eingriffen oder OP-Aufklärungsgesprächen. Für Alltagstermine, Rezepte und Erklärungen — ja. Der Pro-Tarif enthält 5 Gratisminuten pro Monat mit einem zertifizierten medizinischen Dolmetscher, für die Momente, in denen es einen Menschen braucht."
+      },
+      {
+        "q": "Was, wenn ich kein Smartphone oder kein gutes Deutsch habe?",
+        "a": "Die Notfall-Karte funktioniert offline auf jedem Handy — auch ohne Account. Die App-Oberfläche ist in 20+ Sprachen verfügbar, darunter Arabisch, Türkisch, Ukrainisch, Farsi. Eine Desktop-Version für Tablet-Nutzer ist in Arbeit."
+      },
+      {
+        "q": "Warum ist die Notfall-Karte kostenlos?",
+        "a": "Weil der Zugang zu medizinischer Grundsicherheit nicht davon abhängen sollte, was du zahlen kannst. Der kostenlose Tarif löst die beängstigendsten Momente — erste Termine, Notfälle, die Notaufnahme. Die kostenpflichtigen Tarife sind für den Alltag, wo der Mehrwert offensichtlich ist."
+      },
+      {
+        "q": "Wann startet ihr?",
+        "a": "Beta-Start ist für Q4 2026 in Frankfurt und Berlin geplant, mit Expansion auf ganz Deutschland in Q1 2027. Early-Access-Mitglieder bekommen Priority-Onboarding und garantierten Launch-Preis."
+      },
+      {
+        "q": "Wer baut das eigentlich?",
+        "a": "Fünf Gründer von der Frankfurt School. Manche von uns sind selbst über Grenzen gezogen, andere sind als Übersetzer für ihre Eltern aufgewachsen. Wir haben das letzte Jahr mit Interviews verbracht — Patienten, Klinikern, Krankenkassen — und jetzt liefern wir."
+      },
+      {
+        "q": "Was, wenn ich mich anmelde und es nicht funktioniert für mich?",
+        "a": "Kündigen jederzeit, ohne Nachfragen. Der kostenlose Tarif funktioniert für immer weiter, auch nach Kündigung. Wir hätten lieber, du sagst uns, was nicht funktioniert hat — so wird die nächste Version besser."
+      }
+    ]
+  },
   "about": {
     "eyebrow": "Wer dahinter steht",
     "title": "Fünf Gründer. Ein Problem, das wir nicht länger ignorieren.",
@@ -196,7 +247,8 @@
     "col_legal_2": "Impressum",
     "col_legal_3": "AGB",
     "copyright": "© 2026 BioTrail. Alle Rechte vorbehalten.",
-    "location": "Mit Sorgfalt gebaut in Frankfurt am Main"
+    "location": "Mit Sorgfalt gebaut in Frankfurt am Main",
+    "testimonial_notice": "Testimonials sind illustrative Szenarien, basierend auf Kundeninterviews — Namen und Gesichter sind beispielhaft."
   },
   "modal": {
     "eyebrow": "Du bist früh dran",

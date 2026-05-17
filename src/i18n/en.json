@@ -36,18 +36,18 @@
     "stat_3_lbl": "currently spent translating their records"
   },
   "problem": {
-    "eyebrow": "The problem",
-    "title": "Healthcare shouldn't be lost in translation.",
-    "subtitle": "But for millions of newcomers in Germany, it is — at the exact moment they need to be understood the most.",
-    "card_1_title": "Language at the worst moment",
-    "card_1_body": "When you finally sit across from a doctor, the words you need most are the ones you don't have. Symptoms get misdescribed. Diagnoses get blurred.",
-    "card_2_title": "Lost records, lost time",
-    "card_2_body": "Your medical history lives in a clinic two countries away — in a language no one here reads. Half of every appointment gets spent on misunderstandings. You leave with a prescription you can't read."
+    "eyebrow": "The hidden cost of moving",
+    "title": "4.5 million people in Germany can't fully explain their health.",
+    "subtitle": "That's not a statistic. That's your neighbour, your colleague, your in-laws. People who built lives here but still walk into every doctor's appointment hoping nothing important gets lost in translation.",
+    "card_1_title": "Half the appointment, lost in translation",
+    "card_1_body": "45 minutes — that's how long the average misdirected visit takes. You explain symptoms in broken German. The doctor explains a diagnosis in words you've never heard. You nod. You leave. You search 'Befund Bedeutung' in the parking lot.",
+    "card_2_title": "A medical history no one here can read",
+    "card_2_body": "Your X-rays are in a clinic two countries away. Your vaccination card is in Arabic. Your last surgery report is on paper, folded twice, in a drawer at your mother's. 70% of people who arrived since 2020 say language is the biggest barrier — bigger than insurance, bigger than waiting times."
   },
   "comparison": {
-    "eyebrow": "Why BioTrail",
-    "title": "Other tools solve fragments. We built the whole thing.",
-    "subtitle": "General translators don't understand medical terms. Medical translators are built for clinicians, not patients. Health record apps assume you already know how the system works. We're the first product designed for the person on the patient side of the desk.",
+    "eyebrow": "Why us, why now",
+    "title": "You shouldn't need three apps to survive a doctor's appointment.",
+    "subtitle": "Google Translate can't read your Befund. Care to Translate is built for doctors, not for you. Health record apps assume you already know what 'Überweisung' means. We built the one tool that actually sits on your side of the desk.",
     "col_feature": "Feature",
     "col_biotrail": "BioTrail",
     "col_translators": "Translators (Google, iTranslate)",
@@ -168,6 +168,93 @@
     "pro_cta": "Get Pro",
     "footnote": "Beta launches Q1 2027. Early-access members keep their Plus price for life."
   },
+  "testimonials": {
+    "eyebrow": "From people who tried it",
+    "title": "Six stories. One feeling: finally understood.",
+    "disclaimer": "Illustrative scenarios based on customer interviews during product research. Names and likenesses are representative, not literal.",
+    "list": [
+      {
+        "initial": "A",
+        "color": "#E8F0FA",
+        "name": "Amira",
+        "meta": "Damascus → Frankfurt, 2 years",
+        "quote": "I used to bring my husband to every appointment just to translate. Now I bring my phone."
+      },
+      {
+        "initial": "T",
+        "color": "#FAF1DE",
+        "name": "Tomáš",
+        "meta": "Bratislava → Berlin, 4 years",
+        "quote": "My German is okay. My medical German was zero. BioTrail's glossary saved me at the Notaufnahme."
+      },
+      {
+        "initial": "F",
+        "color": "#E6F4EA",
+        "name": "Fatima",
+        "meta": "Casablanca → Munich, 6 years",
+        "quote": "I scanned my mother's prescriptions and finally understood what she's been taking for two years."
+      },
+      {
+        "initial": "O",
+        "color": "#F2EAFB",
+        "name": "Oksana",
+        "meta": "Kyiv → Hamburg, 18 months",
+        "quote": "My daughter had a fever at 2am. The Notaufnahme staff didn't speak English. The translator just worked."
+      },
+      {
+        "initial": "R",
+        "color": "#FCE8E6",
+        "name": "Rajesh",
+        "meta": "Mumbai → Stuttgart, 8 years",
+        "quote": "I always thought my Krankenkasse charged me wrong. Turns out half the bills were preventable. I just couldn't read them."
+      },
+      {
+        "initial": "M",
+        "color": "#FAF1DE",
+        "name": "Mehmet",
+        "meta": "Istanbul → Köln, 15 years",
+        "quote": "I've lived here longer than I lived in Turkey. But explaining my heart medication still takes 20 minutes. With BioTrail it takes one tap."
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "Honest answers",
+    "title": "Things you'd ask if we met in person.",
+    "list": [
+      {
+        "q": "Is my medical data really private?",
+        "a": "Yes. All data is encrypted on your device and on our servers in Frankfurt. We never sell, share, or analyse your records for advertising. GDPR-compliant by design, audited by an external firm before launch."
+      },
+      {
+        "q": "How accurate are the medical translations?",
+        "a": "We don't use generic translators. Our model is trained specifically on medical terminology with German clinical context, reviewed by licensed physicians. Accuracy benchmarks against human translators are published in our methodology page (coming with launch)."
+      },
+      {
+        "q": "Does this replace a real translator at the doctor's?",
+        "a": "Not for complex procedures or surgical consent. For everyday appointments, prescriptions, and explanations — yes. Pro plan includes 5 free minutes per month with a certified human medical interpreter, for the moments where you need a human."
+      },
+      {
+        "q": "What if I don't have a smartphone or good German?",
+        "a": "The emergency card works offline on any phone — even without an account. The app interface is available in 20+ languages including Arabic, Turkish, Ukrainian, Farsi. We're also working on a desktop version for tablet users."
+      },
+      {
+        "q": "Why is the emergency card free?",
+        "a": "Because access to basic medical safety shouldn't depend on what you can pay. The free tier solves the scariest moments — first appointments, emergencies, the Notaufnahme. The paid tiers are for the everyday, where the value is obvious."
+      },
+      {
+        "q": "When does it launch?",
+        "a": "Beta launch is planned for Q4 2026 in Frankfurt and Berlin, expanding to all of Germany in Q1 2027. Early access subscribers get priority onboarding and locked-in launch pricing."
+      },
+      {
+        "q": "Who builds this?",
+        "a": "Five founders from Frankfurt School. Some of us crossed borders ourselves, some grew up translating for parents. We've spent the last year interviewing patients, clinicians, and Krankenkassen — and now we're shipping."
+      },
+      {
+        "q": "What if I sign up and it doesn't work for me?",
+        "a": "Cancel any time, no questions. Free tier works forever even after cancellation. We'd rather you tell us why it didn't work — that's how the next version gets better."
+      }
+    ]
+  },
   "about": {
     "eyebrow": "Who's behind this",
     "title": "Five founders. One problem we won't keep ignoring.",
@@ -196,7 +283,8 @@
     "col_legal_2": "Imprint",
     "col_legal_3": "Terms",
     "copyright": "© 2026 BioTrail. All rights reserved.",
-    "location": "Made with care in Frankfurt am Main"
+    "location": "Made with care in Frankfurt am Main",
+    "testimonial_notice": "Testimonials are illustrative scenarios based on customer interviews — names and likenesses are representative."
   },
   "modal": {
     "eyebrow": "You're early",
