@@ -85,8 +85,8 @@
   },
   "about": {
     "eyebrow": "Who's behind this",
-    "title": "Built by four founders who've each crossed a border.",
-    "body": "BioTrail is a project of four students at Frankfurt School of Finance & Management, born out of the Lean Startup Bootcamp 2026. We've all moved countries. We've all stared at a prescription we couldn't read. We're building the answer we wish we'd had.",
+    "title": "Five founders. One problem we won't keep ignoring.",
+    "body": "BioTrail is built by five founders who've watched friends and family fight to be understood by doctors in a language that wasn't theirs. We've translated prescriptions at kitchen tables. We've seen diagnoses get blurred. We're building the answer that should already exist.",
     "role_co_founder": "Co-founder"
   },
   "cta_final": {
@@ -110,7 +110,7 @@
     "col_legal_1": "Privacy",
     "col_legal_2": "Imprint",
     "col_legal_3": "Terms",
-    "copyright": "© 2026 BioTrail. A Lean Startup Bootcamp project at Frankfurt School.",
+    "copyright": "© 2026 BioTrail. All rights reserved.",
     "location": "Made with care in Frankfurt am Main"
   },
   "modal": {
