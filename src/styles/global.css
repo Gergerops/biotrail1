@@ -853,10 +853,12 @@ footer { border-top: 1px solid var(--c-line); padding: 48px 0 40px; background: 
   border-radius: 38px;
   padding: 0 0 24px;
   box-shadow:
+    0 1px 2px rgba(10, 37, 64, 0.08),
+    0 20px 40px -8px rgba(10, 37, 64, 0.3),
     0 30px 80px -20px rgba(10, 37, 64, 0.5),
-    0 0 0 2px #1a1a2e,
+    inset 0 0 0 1.5px rgba(255, 255, 255, 0.08),
     0 0 0 8px #2a2a3a,
-    0 0 0 9px #1a1a2e;
+    0 0 0 9px rgba(0, 0, 0, 0.95);
   color: #fff;
   font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
   position: relative;
@@ -877,13 +879,13 @@ footer { border-top: 1px solid var(--c-line); padding: 48px 0 40px; background: 
 
 .lockscreen-island {
   position: absolute;
-  top: 11px;
+  top: 10px;
   left: 50%;
   transform: translateX(-50%);
-  width: 80px;
-  height: 24px;
+  width: 72px;
+  height: 22px;
   background: #000;
-  border-radius: 14px;
+  border-radius: 13px;
   z-index: 3;
 }
 
@@ -898,12 +900,16 @@ footer { border-top: 1px solid var(--c-line); padding: 48px 0 40px; background: 
 .lockscreen-statusbar .time-small {
   font-size: 15px;
   font-weight: 600;
+  letter-spacing: -0.02em;
+  min-width: 50px;
   color: #fff;
 }
 .lockscreen-statusbar .indicators {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
+  min-width: 50px;
+  justify-content: flex-end;
 }
 
 .lockscreen-clock {
@@ -1073,10 +1079,12 @@ footer { border-top: 1px solid var(--c-line); padding: 48px 0 40px; background: 
   background: #FAFAF6;
   border-radius: 42px;
   box-shadow:
-    0 30px 80px -20px rgba(10, 37, 64, 0.18),
-    0 0 0 2px #1a1a2e,
+    0 1px 2px rgba(10, 37, 64, 0.08),
+    0 20px 40px -8px rgba(10, 37, 64, 0.18),
+    0 30px 80px -20px rgba(10, 37, 64, 0.25),
+    inset 0 0 0 1.5px rgba(0, 0, 0, 0.85),
     0 0 0 8px #2a2a3a,
-    0 0 0 9px #1a1a2e;
+    0 0 0 9px rgba(0, 0, 0, 0.95);
   color: #000;
   font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -1088,13 +1096,13 @@ footer { border-top: 1px solid var(--c-line); padding: 48px 0 40px; background: 
 
 .phone-island {
   position: absolute;
-  top: 11px;
+  top: 10px;
   left: 50%;
   transform: translateX(-50%);
-  width: 80px;
-  height: 24px;
+  width: 72px;
+  height: 22px;
   background: #000;
-  border-radius: 14px;
+  border-radius: 13px;
   z-index: 3;
 }
 
@@ -1102,7 +1110,7 @@ footer { border-top: 1px solid var(--c-line); padding: 48px 0 40px; background: 
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 14px 22px 0;
+  padding: 14px 24px 0;
   color: #000;
   font-size: 13px;
   height: 44px;
@@ -1110,29 +1118,32 @@ footer { border-top: 1px solid var(--c-line); padding: 48px 0 40px; background: 
   z-index: 2;
 }
 .phone-statusbar .time-small {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
+  min-width: 50px;
 }
 .phone-statusbar .indicators {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
+  min-width: 50px;
+  justify-content: flex-end;
 }
 
 .phone-navbar {
-  padding: 6px 16px 4px;
+  padding: 4px 16px 6px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  min-height: 44px;
+  min-height: 40px;
 }
 .phone-navtitle {
-  font-size: 26px;
+  font-size: 22px;
   font-weight: 700;
-  letter-spacing: -0.022em;
+  letter-spacing: -0.024em;
   color: #000;
-  line-height: 1.1;
+  line-height: 1.15;
 }
 .phone-navbutton {
   width: 28px;
@@ -1168,6 +1179,14 @@ footer { border-top: 1px solid var(--c-line); padding: 48px 0 40px; background: 
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+.phone-screen::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.04);
 }
 .phone-app-body {
   flex: 1;
@@ -1181,7 +1200,7 @@ footer { border-top: 1px solid var(--c-line); padding: 48px 0 40px; background: 
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 8px 4px 0;
+  padding: 8px 4px 4px;
   border-top: 0.5px solid rgba(60, 60, 67, 0.12);
   background: rgba(250, 250, 246, 0.82);
   backdrop-filter: blur(20px);
@@ -1201,8 +1220,8 @@ footer { border-top: 1px solid var(--c-line); padding: 48px 0 40px; background: 
 .phone-tab.active { color: #007AFF; }
 
 .phone-home-indicator {
-  margin: 8px auto 6px;
-  width: 120px;
+  margin: 4px auto 8px;
+  width: 130px;
   height: 4px;
   background: #000;
   border-radius: 3px;
@@ -1211,12 +1230,13 @@ footer { border-top: 1px solid var(--c-line); padding: 48px 0 40px; background: 
 
 /* iOS section header ─────────────────────────────────── */
 .ios-section-header {
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 600;
   color: rgba(60, 60, 67, 0.6);
-  letter-spacing: 0.01em;
-  padding: 10px 4px 4px;
-  text-transform: none;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 14px 16px 6px;
+  margin: 0;
 }
 
 /* iOS list rows ──────────────────────────────────────── */
@@ -1383,10 +1403,10 @@ footer { border-top: 1px solid var(--c-line); padding: 48px 0 40px; background: 
   font-family: ui-monospace, 'SF Mono', Menlo, monospace;
 }
 .ios-total {
-  font-size: 18px;
+  font-size: 13px;
   font-weight: 600;
-  color: #000;
-  padding: 8px 4px;
+  color: rgba(60, 60, 67, 0.7);
+  padding: 4px 16px 8px;
   letter-spacing: -0.01em;
 }
 
