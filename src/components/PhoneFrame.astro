@@ -1,17 +1,35 @@
 ---
 /**
- * PhoneFrame — reusable iPhone-15-Pro-style mockup container.
- * Used by the Solution-section step visuals to keep all in-app screens
- * visually consistent with the Emergency lockscreen-mockup.
+ * PhoneFrame — iPhone-15-Pro-style mockup with iOS 17 chrome
+ * (Dynamic Island, large-title navbar, optional search bar,
+ * bottom tab bar, home indicator).
  *
- * Visual chrome (frame, island, statusbar) is fixed; the app's content
- * goes inside the <slot /> under a serif app header.
+ * Used by the Solution-section step visuals so every screen feels
+ * like one connected product.
  */
 interface Props {
   time?: string;
-  appName: string;
+  navTitle: string;
+  activeTab: 'documents' | 'translate' | 'glossary' | 'insurance';
+  showSearch?: boolean;
+  showNavButton?: boolean;
+  navButtonIcon?: string;
 }
-const { time = '9:41', appName } = Astro.props;
+const {
+  time = '9:41',
+  navTitle,
+  activeTab,
+  showSearch = false,
+  showNavButton = false,
+  navButtonIcon = '+',
+} = Astro.props;
+
+const tabs = [
+  { id: 'documents', label: 'Documents', icon: 'M3 6h18M3 12h18M3 18h18' },
+  { id: 'translate', label: 'Translate', icon: 'M3 5h12M9 3v2M5 13l-2 4h4l-2-4zM15 7l3 8h-6l3-8z' },
+  { id: 'glossary',  label: 'Glossary',  icon: 'M4 4h12a2 2 0 012 2v14H6a2 2 0 01-2-2V4zM4 4l2 2M16 4l2 2v14' },
+  { id: 'insurance', label: 'Insurance', icon: 'M12 2L4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-4z' },
+];
 ---
 
 <div class="phone-frame" aria-hidden="true">
@@ -36,10 +54,40 @@ const { time = '9:41', appName } = Astro.props;
       </svg>
     </span>
   </div>
+
+  <div class="phone-navbar">
+    <span class="phone-navtitle">{navTitle}</span>
+    {showNavButton && (
+      <button class="phone-navbutton" type="button" tabindex="-1" aria-hidden="true">{navButtonIcon}</button>
+    )}
+  </div>
+
+  {showSearch && (
+    <div class="phone-searchbar">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <circle cx="11" cy="11" r="7"/>
+        <path d="M21 21l-4.35-4.35"/>
+      </svg>
+      <span>Search</span>
+    </div>
+  )}
+
   <div class="phone-screen">
-    <div class="phone-app-header">{appName}</div>
     <div class="phone-app-body">
       <slot />
     </div>
   </div>
+
+  <div class="phone-tabbar">
+    {tabs.map((tab) => (
+      <div class={`phone-tab ${activeTab === tab.id ? 'active' : ''}`}>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d={tab.icon}/>
+        </svg>
+        <span>{tab.label}</span>
+      </div>
+    ))}
+  </div>
+
+  <div class="phone-home-indicator"></div>
 </div>

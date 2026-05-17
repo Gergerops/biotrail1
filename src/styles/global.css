@@ -852,7 +852,11 @@ footer { border-top: 1px solid var(--c-line); padding: 48px 0 40px; background: 
     linear-gradient(180deg, #0a0a14 0%, #1a1a2e 50%, #0a0a14 100%);
   border-radius: 38px;
   padding: 0 0 24px;
-  box-shadow: 0 30px 80px -20px rgba(0,0,0,0.6), 0 0 0 8px #0a0a14, 0 0 0 9px #2a2a3a;
+  box-shadow:
+    0 30px 80px -20px rgba(10, 37, 64, 0.5),
+    0 0 0 2px #1a1a2e,
+    0 0 0 8px #2a2a3a,
+    0 0 0 9px #1a1a2e;
   color: #fff;
   font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
   position: relative;
@@ -873,14 +877,14 @@ footer { border-top: 1px solid var(--c-line); padding: 48px 0 40px; background: 
 
 .lockscreen-island {
   position: absolute;
-  top: 14px;
+  top: 11px;
   left: 50%;
   transform: translateX(-50%);
-  width: 110px;
-  height: 32px;
+  width: 80px;
+  height: 24px;
   background: #000;
-  border-radius: 20px;
-  z-index: 2;
+  border-radius: 14px;
+  z-index: 3;
 }
 
 .lockscreen-statusbar {
@@ -994,8 +998,17 @@ footer { border-top: 1px solid var(--c-line); padding: 48px 0 40px; background: 
   text-align: center;
   font-size: 11px;
   color: rgba(255, 255, 255, 0.45);
-  margin-top: auto;
   padding-top: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.lockscreen-home-indicator {
+  margin: auto auto 8px;
+  width: 120px;
+  height: 4px;
+  background: rgba(255,255,255,0.6);
+  border-radius: 3px;
   position: relative;
   z-index: 1;
 }
@@ -1052,16 +1065,21 @@ footer { border-top: 1px solid var(--c-line); padding: 48px 0 40px; background: 
   .pricing-toggle button { padding: 9px 14px; font-size: 12.5px; }
 }
 
-/* PHONE FRAME (reusable iPhone-15-Pro mockup) ────────── */
+/* PHONE FRAME (reusable iPhone-15-Pro mockup, iOS 17 chrome) ─ */
 .phone-frame {
   max-width: 280px;
   margin: 0 auto;
   aspect-ratio: 9 / 19.5;
-  background: #fff;
-  border-radius: 38px;
-  box-shadow: 0 30px 80px -20px rgba(10, 37, 64, 0.18), 0 0 0 8px #1a1a2e, 0 0 0 9px #2a2a3a;
-  color: var(--c-ink);
-  font-family: var(--f-sans);
+  background: #FAFAF6;
+  border-radius: 42px;
+  box-shadow:
+    0 30px 80px -20px rgba(10, 37, 64, 0.18),
+    0 0 0 2px #1a1a2e,
+    0 0 0 8px #2a2a3a,
+    0 0 0 9px #1a1a2e;
+  color: #000;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', Helvetica, Arial, sans-serif;
+  font-size: 14px;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -1070,26 +1088,31 @@ footer { border-top: 1px solid var(--c-line); padding: 48px 0 40px; background: 
 
 .phone-island {
   position: absolute;
-  top: 14px;
+  top: 11px;
   left: 50%;
   transform: translateX(-50%);
-  width: 95px;
-  height: 28px;
+  width: 80px;
+  height: 24px;
   background: #000;
-  border-radius: 18px;
-  z-index: 2;
+  border-radius: 14px;
+  z-index: 3;
 }
 
 .phone-statusbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 22px 0;
-  color: var(--c-ink);
+  padding: 14px 22px 0;
+  color: #000;
+  font-size: 13px;
+  height: 44px;
+  position: relative;
+  z-index: 2;
 }
 .phone-statusbar .time-small {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
+  letter-spacing: -0.01em;
 }
 .phone-statusbar .indicators {
   display: flex;
@@ -1097,95 +1120,189 @@ footer { border-top: 1px solid var(--c-line); padding: 48px 0 40px; background: 
   gap: 5px;
 }
 
+.phone-navbar {
+  padding: 6px 16px 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  min-height: 44px;
+}
+.phone-navtitle {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.022em;
+  color: #000;
+  line-height: 1.1;
+}
+.phone-navbutton {
+  width: 28px;
+  height: 28px;
+  border-radius: 14px;
+  background: rgba(120, 120, 128, 0.12);
+  color: #007AFF;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+
+.phone-searchbar {
+  margin: 4px 16px 8px;
+  padding: 7px 10px;
+  background: rgba(120, 120, 128, 0.12);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(60, 60, 67, 0.6);
+  font-size: 14px;
+}
+
 .phone-screen {
   flex: 1;
-  padding: 50px 16px 24px;
+  padding: 0 16px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  overflow: hidden;
 }
-
-.phone-app-header {
-  font-family: var(--f-serif);
-  font-size: 22px;
-  line-height: 1.1;
-  color: var(--c-ink);
-  letter-spacing: -0.01em;
-  padding-bottom: 6px;
-}
-
 .phone-app-body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
   overflow: hidden;
 }
 
-/* Step 1 — My documents ──────────────────────────────── */
-.doc-card {
+.phone-tabbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 8px 4px 0;
+  border-top: 0.5px solid rgba(60, 60, 67, 0.12);
+  background: rgba(250, 250, 246, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+.phone-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  color: rgba(60, 60, 67, 0.45);
+  font-size: 9px;
+  font-weight: 500;
+  padding: 4px 4px 0;
+  flex: 1;
+}
+.phone-tab.active { color: #007AFF; }
+
+.phone-home-indicator {
+  margin: 8px auto 6px;
+  width: 120px;
+  height: 4px;
+  background: #000;
+  border-radius: 3px;
+  opacity: 0.95;
+}
+
+/* iOS section header ─────────────────────────────────── */
+.ios-section-header {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(60, 60, 67, 0.6);
+  letter-spacing: 0.01em;
+  padding: 10px 4px 4px;
+  text-transform: none;
+}
+
+/* iOS list rows ──────────────────────────────────────── */
+.ios-row {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 12px;
-  background: var(--c-bg-warm);
+  padding: 10px 12px;
+  background: #fff;
   border-radius: 12px;
+  font-size: 14px;
 }
-.doc-icon {
-  width: 32px; height: 32px;
+.ios-icon-wrap {
+  width: 30px; height: 30px;
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--f-serif);
-  font-size: 16px;
+  font-size: 14px;
+  font-weight: 600;
   flex-shrink: 0;
 }
-.doc-icon-rx { background: #D9E3EE; color: var(--c-ink); }
-.doc-icon-vacc { background: #E1F0E8; color: var(--c-success); }
-.doc-icon-lab { background: #F5EBD4; color: var(--c-accent); }
-
-.doc-meta { flex: 1; min-width: 0; }
-.doc-title { font-size: 13px; font-weight: 600; color: var(--c-ink); }
-.doc-sub { font-size: 11px; color: var(--c-ink-soft); margin-top: 2px; }
-.doc-badge {
+.ios-row-content { flex: 1; min-width: 0; }
+.ios-row-title { font-size: 14px; font-weight: 500; color: #000; line-height: 1.2; }
+.ios-row-sub { font-size: 11px; color: rgba(60, 60, 67, 0.6); margin-top: 2px; }
+.ios-chevron {
+  color: rgba(60, 60, 67, 0.3);
+  font-size: 17px;
+  font-weight: 400;
+  font-family: -apple-system, sans-serif;
+}
+.ios-badge {
   font-size: 9px;
   font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 3px 7px;
+  padding: 3px 6px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+.ios-badge-green { background: #E6F4EA; color: #1B7A3E; }
+.ios-badge-amber { background: #FDF1D8; color: #8B6914; }
+
+/* iOS grouped list card ─────────────────────────────── */
+.ios-list-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.ios-list-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 14px;
+  border-bottom: 0.5px solid rgba(60, 60, 67, 0.12);
+}
+.ios-list-item:last-child { border-bottom: 0; }
+.ios-list-main { flex: 1; min-width: 0; }
+.ios-list-title { font-size: 14px; font-weight: 500; color: #000; }
+.ios-list-sub { font-size: 11px; color: rgba(60, 60, 67, 0.6); margin-top: 2px; }
+.ios-list-item-warn .ios-list-title { color: #C0392B; }
+
+/* iOS pills ─────────────────────────────────────────── */
+.ios-pill {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 9px;
   border-radius: 99px;
   flex-shrink: 0;
 }
-.doc-badge.translated { background: #F0F7F3; color: var(--c-success); }
-.doc-badge.reviewing { background: #FAF4E5; color: var(--c-accent); }
+.ios-pill-green { background: #E6F4EA; color: #1B7A3E; }
+.ios-pill-amber { background: #FDF1D8; color: #8B6914; }
+.ios-pill-red { background: #FCE8E6; color: #C0392B; }
 
-.doc-add {
-  margin-top: auto;
-  padding: 11px;
-  background: var(--c-ink);
-  color: #fff;
-  border-radius: 12px;
-  font-size: 13px;
-  font-weight: 500;
-  border: 0;
-  cursor: default;
-}
-
-/* Step 2 — Live translation ──────────────────────────── */
-.live-active {
+/* iOS messaging (Translate tab) ─────────────────────── */
+.ios-translate-status {
   display: flex;
   align-items: center;
   gap: 6px;
   font-size: 11px;
-  color: var(--c-success);
+  color: #1B7A3E;
   font-weight: 500;
-  padding: 0 4px;
+  padding: 4px 4px 6px;
+  justify-content: center;
 }
-.live-dot {
+.ios-pulse {
   width: 6px; height: 6px;
-  background: var(--c-success);
+  background: #1B7A3E;
   border-radius: 50%;
   animation: pulse 1.6s ease-in-out infinite;
 }
@@ -1193,142 +1310,87 @@ footer { border-top: 1px solid var(--c-line); padding: 48px 0 40px; background: 
   0%, 100% { opacity: 1; }
   50% { opacity: 0.3; }
 }
-.live-bubble {
-  padding: 9px 12px;
-  border-radius: 14px;
-  font-size: 13px;
-  max-width: 85%;
+.ios-msg {
+  display: flex;
+  flex-direction: column;
+  max-width: 75%;
 }
-.live-bubble-label {
+.ios-msg-them { align-items: flex-start; }
+.ios-msg-me { align-items: flex-end; align-self: flex-end; }
+.ios-msg-meta {
   font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin-bottom: 3px;
-  opacity: 0.6;
+  font-weight: 500;
+  color: rgba(60, 60, 67, 0.55);
+  margin-bottom: 2px;
+  padding: 0 6px;
 }
-.live-bubble-text {
-  font-family: var(--f-serif);
-  font-style: italic;
-  font-size: 15px;
-  line-height: 1.2;
+.ios-msg-bubble {
+  padding: 7px 12px;
+  border-radius: 17px;
+  font-size: 14px;
+  line-height: 1.25;
 }
-.live-bubble-you {
-  align-self: flex-start;
-  background: var(--c-bg-warm);
-  color: var(--c-ink);
+.ios-msg-bubble-grey { background: rgba(120, 120, 128, 0.16); color: #000; }
+.ios-msg-bubble-blue { background: #007AFF; color: #fff; }
+.ios-msg-time {
+  font-size: 9px;
+  color: rgba(60, 60, 67, 0.45);
+  margin-top: 1px;
+  padding: 0 6px;
 }
-.live-bubble-doctor {
-  align-self: flex-end;
-  background: var(--c-ink);
-  color: #fff;
-}
-.live-bubble-you-back, .live-bubble-doctor-back { opacity: 0.55; }
-.live-mic {
+.ios-mic-tray {
   margin-top: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 4px;
-  padding: 14px;
+  padding: 10px;
 }
-.live-mic .mic-dot {
+.ios-mic-tray .mic-dot {
   width: 5px; height: 5px;
-  background: var(--c-accent);
+  background: #007AFF;
   border-radius: 50%;
   animation: pulse 1.4s ease-in-out infinite;
 }
-.live-mic .mic-dot:nth-child(2) { animation-delay: 0.2s; }
-.live-mic .mic-dot:nth-child(3) { animation-delay: 0.4s; }
+.ios-mic-tray .mic-dot:nth-child(2) { animation-delay: 0.2s; }
+.ios-mic-tray .mic-dot:nth-child(3) { animation-delay: 0.4s; }
 
-/* Step 3 — Glossary ─────────────────────────────────── */
-.glossary-search {
-  font-size: 12px;
-  color: var(--c-ink-soft);
-  padding: 9px 12px;
-  background: var(--c-bg-warm);
-  border-radius: 10px;
-}
-.glossary-card {
-  padding: 10px 12px;
-  border-radius: 12px;
-  background: var(--c-bg);
-  border: 1px solid var(--c-line);
-}
-.glossary-term {
-  font-family: var(--f-serif);
-  font-size: 16px;
-  color: var(--c-ink);
-  font-weight: 500;
-}
-.glossary-def {
-  font-size: 11px;
-  color: var(--c-ink-soft);
-  line-height: 1.4;
-  margin-top: 4px;
-}
-.glossary-when {
-  display: inline-block;
-  margin-top: 6px;
-  font-size: 10px;
-  font-weight: 500;
-  color: var(--c-accent);
-}
-.glossary-card-emergency {
-  border-color: rgba(192, 57, 43, 0.25);
-  background: #FCF2F0;
-}
-.glossary-card-emergency .glossary-when { color: #C0392B; }
-
-/* Step 4 — Insurance ────────────────────────────────── */
-.insurance-card {
-  padding: 12px;
-  background: var(--c-ink);
+/* iOS insurance hero (Insurance tab) ────────────────── */
+.ios-insurance-hero {
+  padding: 14px;
+  background: linear-gradient(135deg, #0A2540 0%, #1a3a5c 100%);
   color: #fff;
-  border-radius: 12px;
-}
-.insurance-label {
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.55);
-}
-.insurance-name {
-  font-family: var(--f-serif);
-  font-size: 15px;
+  border-radius: 14px;
   margin-top: 2px;
 }
-.insurance-id {
-  font-size: 10px;
-  color: rgba(255,255,255,0.55);
-  margin-top: 4px;
-  font-family: ui-monospace, monospace;
-}
-.insurance-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 12px;
-  border-radius: 10px;
-  background: var(--c-bg);
-  border: 1px solid var(--c-line);
-}
-.insurance-svc { flex: 1; min-width: 0; }
-.insurance-svc-title { font-size: 12px; font-weight: 600; color: var(--c-ink); }
-.insurance-svc-sub { font-size: 10px; color: var(--c-ink-soft); margin-top: 1px; }
-.insurance-cost {
+.ios-insurance-label {
   font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.04em;
-  padding: 4px 8px;
-  border-radius: 99px;
-  flex-shrink: 0;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.6;
 }
-.insurance-covered { background: #F0F7F3; color: var(--c-success); }
-.insurance-partial { background: #FAF4E5; color: var(--c-accent); }
-.insurance-not { background: #FCF2F0; color: #C0392B; }
+.ios-insurance-name {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 4px;
+  letter-spacing: -0.01em;
+}
+.ios-insurance-id {
+  font-size: 11px;
+  margin-top: 6px;
+  opacity: 0.7;
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+}
+.ios-total {
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+  padding: 8px 4px;
+  letter-spacing: -0.01em;
+}
 
 @media (max-width: 880px) {
   .phone-frame { max-width: 240px; }
+  .phone-navtitle { font-size: 22px; }
 }

@@ -177,32 +177,49 @@ const team = [
           <p>{dict.solution.step_1_body}</p>
         </div>
         <div class="step-visual">
-          <PhoneFrame appName="My documents">
-            <div class="doc-card">
-              <div class="doc-icon doc-icon-rx">℞</div>
-              <div class="doc-meta">
-                <div class="doc-title">Prescription</div>
-                <div class="doc-sub">Dr. Müller · 14 May</div>
+          <PhoneFrame navTitle="Documents" activeTab="documents" showSearch={true} showNavButton={true} navButtonIcon="+">
+            <div class="ios-section-header">Recent</div>
+            <div class="ios-row">
+              <div class="ios-icon-wrap" style="background: #E8F0FA; color: #0A2540;">℞</div>
+              <div class="ios-row-content">
+                <div class="ios-row-title">Prescription · Metoprolol</div>
+                <div class="ios-row-sub">Dr. Müller · 14 May</div>
               </div>
-              <span class="doc-badge translated">Translated</span>
+              <span class="ios-badge ios-badge-green">DE→EN</span>
+              <span class="ios-chevron">›</span>
             </div>
-            <div class="doc-card">
-              <div class="doc-icon doc-icon-vacc">✚</div>
-              <div class="doc-meta">
-                <div class="doc-title">Vaccination card</div>
-                <div class="doc-sub">6 entries</div>
+            <div class="ios-row">
+              <div class="ios-icon-wrap" style="background: #E6F3EC; color: #00875A;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 8.5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zM21 19.5L13 13l-5 4-5-4v8h18z"/></svg>
               </div>
-              <span class="doc-badge translated">Translated</span>
-            </div>
-            <div class="doc-card">
-              <div class="doc-icon doc-icon-lab">⏲</div>
-              <div class="doc-meta">
-                <div class="doc-title">Blood test</div>
-                <div class="doc-sub">3 Apr · Uniklinik</div>
+              <div class="ios-row-content">
+                <div class="ios-row-title">Vaccination card</div>
+                <div class="ios-row-sub">6 entries · synced</div>
               </div>
-              <span class="doc-badge reviewing">Reviewing</span>
+              <span class="ios-badge ios-badge-green">Translated</span>
+              <span class="ios-chevron">›</span>
             </div>
-            <button class="doc-add" type="button" tabindex="-1">＋ Add document</button>
+            <div class="ios-row">
+              <div class="ios-icon-wrap" style="background: #FAF1DE; color: #B8954B;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              </div>
+              <div class="ios-row-content">
+                <div class="ios-row-title">Blood panel</div>
+                <div class="ios-row-sub">3 Apr · Uniklinik Frankfurt</div>
+              </div>
+              <span class="ios-badge ios-badge-amber">Reviewing</span>
+              <span class="ios-chevron">›</span>
+            </div>
+            <div class="ios-section-header">Earlier</div>
+            <div class="ios-row">
+              <div class="ios-icon-wrap" style="background: #F2EAFB; color: #6F42C1;">📋</div>
+              <div class="ios-row-content">
+                <div class="ios-row-title">MRI scan report</div>
+                <div class="ios-row-sub">Jan · München</div>
+              </div>
+              <span class="ios-badge ios-badge-green">DE→EN</span>
+              <span class="ios-chevron">›</span>
+            </div>
           </PhoneFrame>
         </div>
       </div>
@@ -215,28 +232,32 @@ const team = [
           <p>{dict.solution.step_2_body}</p>
         </div>
         <div class="step-visual">
-          <PhoneFrame appName="Live translation">
-            <div class="live-active">
-              <div class="live-dot"></div>
-              <span>Listening · TR → DE</span>
+          <PhoneFrame navTitle="Translate" activeTab="translate" showNavButton={true} navButtonIcon="⋯">
+            <div class="ios-translate-status">
+              <span class="ios-pulse"></span>
+              <span>Listening · Turkish → German</span>
             </div>
-            <div class="live-bubble live-bubble-you">
-              <div class="live-bubble-label">You · Turkish</div>
-              <div class="live-bubble-text">Karnım ağrıyor</div>
+            <div class="ios-msg ios-msg-them">
+              <div class="ios-msg-meta">You said · Turkish</div>
+              <div class="ios-msg-bubble ios-msg-bubble-grey">Karnım ağrıyor</div>
+              <div class="ios-msg-time">9:42</div>
             </div>
-            <div class="live-bubble live-bubble-doctor">
-              <div class="live-bubble-label">Doctor hears · Deutsch</div>
-              <div class="live-bubble-text">Ich habe Bauchschmerzen</div>
+            <div class="ios-msg ios-msg-me">
+              <div class="ios-msg-meta">Doctor hears · Deutsch</div>
+              <div class="ios-msg-bubble ios-msg-bubble-blue">Ich habe Bauchschmerzen</div>
+              <div class="ios-msg-time">9:42</div>
             </div>
-            <div class="live-bubble live-bubble-doctor live-bubble-doctor-back">
-              <div class="live-bubble-label">Doctor · Deutsch</div>
-              <div class="live-bubble-text">Seit wann?</div>
+            <div class="ios-msg ios-msg-them">
+              <div class="ios-msg-meta">Doctor said · Deutsch</div>
+              <div class="ios-msg-bubble ios-msg-bubble-grey">Seit wann?</div>
+              <div class="ios-msg-time">9:42</div>
             </div>
-            <div class="live-bubble live-bubble-you live-bubble-you-back">
-              <div class="live-bubble-label">You hear · Turkish</div>
-              <div class="live-bubble-text">Ne zamandan beri?</div>
+            <div class="ios-msg ios-msg-me">
+              <div class="ios-msg-meta">You hear · Turkish</div>
+              <div class="ios-msg-bubble ios-msg-bubble-blue">Ne zamandan beri?</div>
+              <div class="ios-msg-time">9:42</div>
             </div>
-            <div class="live-mic">
+            <div class="ios-mic-tray">
               <span class="mic-dot"></span>
               <span class="mic-dot"></span>
               <span class="mic-dot"></span>
@@ -253,22 +274,54 @@ const team = [
           <p>{dict.solution.step_3_body}</p>
         </div>
         <div class="step-visual">
-          <PhoneFrame appName="German healthcare 101">
-            <div class="glossary-search">🔍 Search a term…</div>
-            <div class="glossary-card">
-              <div class="glossary-term">Hausarzt</div>
-              <div class="glossary-def">Your family doctor. The first stop for non-emergency issues. They refer you to specialists.</div>
-              <span class="glossary-when">When you need them: first.</span>
+          <PhoneFrame navTitle="Glossary" activeTab="glossary" showSearch={true}>
+            <div class="ios-section-header">Essentials</div>
+            <div class="ios-list-card">
+              <div class="ios-list-item">
+                <div class="ios-list-main">
+                  <div class="ios-list-title">Hausarzt</div>
+                  <div class="ios-list-sub">Family doctor · first stop</div>
+                </div>
+                <span class="ios-chevron">›</span>
+              </div>
+              <div class="ios-list-item">
+                <div class="ios-list-main">
+                  <div class="ios-list-title">Facharzt</div>
+                  <div class="ios-list-sub">Specialist · needs referral</div>
+                </div>
+                <span class="ios-chevron">›</span>
+              </div>
+              <div class="ios-list-item">
+                <div class="ios-list-main">
+                  <div class="ios-list-title">Überweisung</div>
+                  <div class="ios-list-sub">Referral note · paper</div>
+                </div>
+                <span class="ios-chevron">›</span>
+              </div>
+              <div class="ios-list-item">
+                <div class="ios-list-main">
+                  <div class="ios-list-title">AU-Bescheinigung</div>
+                  <div class="ios-list-sub">Sick note for employer</div>
+                </div>
+                <span class="ios-chevron">›</span>
+              </div>
             </div>
-            <div class="glossary-card">
-              <div class="glossary-term">Überweisung</div>
-              <div class="glossary-def">A referral note. You need one from your Hausarzt to see most specialists.</div>
-              <span class="glossary-when">When: before booking a Facharzt.</span>
-            </div>
-            <div class="glossary-card glossary-card-emergency">
-              <div class="glossary-term">Notaufnahme</div>
-              <div class="glossary-def">Emergency room. Only for life-threatening situations.</div>
-              <span class="glossary-when">When: real emergency only.</span>
+            <div class="ios-section-header">Emergency</div>
+            <div class="ios-list-card">
+              <div class="ios-list-item ios-list-item-warn">
+                <div class="ios-list-main">
+                  <div class="ios-list-title">Notaufnahme</div>
+                  <div class="ios-list-sub">Emergency room · life-threat only</div>
+                </div>
+                <span class="ios-chevron">›</span>
+              </div>
+              <div class="ios-list-item ios-list-item-warn">
+                <div class="ios-list-main">
+                  <div class="ios-list-title">Notruf 112</div>
+                  <div class="ios-list-sub">Ambulance · free, 24/7</div>
+                </div>
+                <span class="ios-chevron">›</span>
+              </div>
             </div>
           </PhoneFrame>
         </div>
@@ -282,33 +335,38 @@ const team = [
           <p>{dict.solution.step_4_body}</p>
         </div>
         <div class="step-visual">
-          <PhoneFrame appName="My Krankenkasse">
-            <div class="insurance-card">
-              <div class="insurance-label">Insured with</div>
-              <div class="insurance-name">TK · Techniker Krankenkasse</div>
-              <div class="insurance-id">Member · A1234567890</div>
+          <PhoneFrame navTitle="Insurance" activeTab="insurance">
+            <div class="ios-insurance-hero">
+              <div class="ios-insurance-label">Insured with</div>
+              <div class="ios-insurance-name">Techniker Krankenkasse</div>
+              <div class="ios-insurance-id">A1234567890 · Maria K.</div>
             </div>
-            <div class="insurance-row">
-              <div class="insurance-svc">
-                <div class="insurance-svc-title">Annual check-up</div>
-                <div class="insurance-svc-sub">Hausarzt visit</div>
+            <div class="ios-section-header">This month</div>
+            <div class="ios-list-card">
+              <div class="ios-list-item">
+                <div class="ios-list-main">
+                  <div class="ios-list-title">Annual check-up</div>
+                  <div class="ios-list-sub">Hausarzt · 14 May</div>
+                </div>
+                <span class="ios-pill ios-pill-green">Covered</span>
               </div>
-              <span class="insurance-cost insurance-covered">Covered</span>
-            </div>
-            <div class="insurance-row">
-              <div class="insurance-svc">
-                <div class="insurance-svc-title">Prescribed antibiotic</div>
-                <div class="insurance-svc-sub">Amoxicillin 500mg</div>
+              <div class="ios-list-item">
+                <div class="ios-list-main">
+                  <div class="ios-list-title">Amoxicillin 500mg</div>
+                  <div class="ios-list-sub">Apotheke · 14 May</div>
+                </div>
+                <span class="ios-pill ios-pill-amber">€5</span>
               </div>
-              <span class="insurance-cost insurance-partial">€5 Zuzahlung</span>
-            </div>
-            <div class="insurance-row">
-              <div class="insurance-svc">
-                <div class="insurance-svc-title">Dental cleaning</div>
-                <div class="insurance-svc-sub">Professional</div>
+              <div class="ios-list-item">
+                <div class="ios-list-main">
+                  <div class="ios-list-title">Dental cleaning</div>
+                  <div class="ios-list-sub">Zahnarzt · planned</div>
+                </div>
+                <span class="ios-pill ios-pill-red">€80</span>
               </div>
-              <span class="insurance-cost insurance-not">Not covered</span>
             </div>
+            <div class="ios-section-header">Total out-of-pocket</div>
+            <div class="ios-total">€85.00 this month</div>
           </PhoneFrame>
         </div>
       </div>
@@ -377,6 +435,7 @@ const team = [
             </div>
           </div>
           <div class="lockscreen-hint">Swipe up for full card · Offline</div>
+          <div class="lockscreen-home-indicator"></div>
         </div>
       </div>
     </div>
