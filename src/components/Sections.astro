@@ -47,6 +47,117 @@ const team = [
   </div>
 </section>
 
+<!-- ─────── COMPARISON ─────── -->
+<section class="block">
+  <div class="container">
+    <div class="block-head reveal" style="margin-left:auto; margin-right:auto; text-align:center; max-width: 720px;">
+      <span class="eyebrow" style="justify-content:center;">{dict.comparison.eyebrow}</span>
+      <h2>{dict.comparison.title}</h2>
+      <p style="margin-left:auto; margin-right:auto;">{dict.comparison.subtitle}</p>
+    </div>
+
+    <div class="compare-wrap reveal">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>{dict.comparison.col_feature}</th>
+            <th class="col-biotrail">{dict.comparison.col_biotrail}</th>
+            <th>{dict.comparison.col_translators}</th>
+            <th>{dict.comparison.col_medical}</th>
+            <th>{dict.comparison.col_records}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">{dict.comparison.row_1}</th>
+            <td class="col-biotrail"><span class="yes">✓</span></td>
+            <td><span class="no">—</span></td>
+            <td><span class="yes">✓</span></td>
+            <td><span class="no">—</span></td>
+          </tr>
+          <tr>
+            <th scope="row">{dict.comparison.row_2}</th>
+            <td class="col-biotrail"><span class="yes">✓</span></td>
+            <td><span class="no">—</span></td>
+            <td><span class="no">—</span></td>
+            <td><span class="yes">✓</span></td>
+          </tr>
+          <tr>
+            <th scope="row">{dict.comparison.row_3}</th>
+            <td class="col-biotrail"><span class="yes">✓</span></td>
+            <td><span class="no">—</span></td>
+            <td><span class="no">—</span></td>
+            <td><span class="no">—</span></td>
+          </tr>
+          <tr>
+            <th scope="row">{dict.comparison.row_4}</th>
+            <td class="col-biotrail"><span class="yes">✓</span></td>
+            <td><span class="no">—</span></td>
+            <td><span class="no">—</span></td>
+            <td><span class="no">—</span></td>
+          </tr>
+          <tr>
+            <th scope="row">{dict.comparison.row_5}</th>
+            <td class="col-biotrail"><span class="yes">✓</span></td>
+            <td><span class="yes">✓</span></td>
+            <td><span class="no">—</span></td>
+            <td><span class="no">—</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="compare-stack">
+        {[
+          { feat: dict.comparison.row_1, vals: [true, false, true, false] },
+          { feat: dict.comparison.row_2, vals: [true, false, false, true] },
+          { feat: dict.comparison.row_3, vals: [true, false, false, false] },
+          { feat: dict.comparison.row_4, vals: [true, false, false, false] },
+          { feat: dict.comparison.row_5, vals: [true, true, false, false] },
+        ].map((row) => (
+          <div class="stack-card">
+            <div class="stack-feat">{row.feat}</div>
+            <ul>
+              <li class="is-biotrail"><span class={`mark ${row.vals[0] ? 'yes' : 'no'}`}>{row.vals[0] ? '✓' : '—'}</span> {dict.comparison.col_biotrail}</li>
+              <li><span class={`mark ${row.vals[1] ? 'yes' : 'no'}`}>{row.vals[1] ? '✓' : '—'}</span> {dict.comparison.col_translators}</li>
+              <li><span class={`mark ${row.vals[2] ? 'yes' : 'no'}`}>{row.vals[2] ? '✓' : '—'}</span> {dict.comparison.col_medical}</li>
+              <li><span class={`mark ${row.vals[3] ? 'yes' : 'no'}`}>{row.vals[3] ? '✓' : '—'}</span> {dict.comparison.col_records}</li>
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────── SEGMENTS ─────── -->
+<section class="block">
+  <div class="container">
+    <div class="block-head reveal" style="margin-left:auto; margin-right:auto; text-align:center; max-width: 720px;">
+      <span class="eyebrow" style="justify-content:center;">{dict.segments.eyebrow}</span>
+      <h2>{dict.segments.title}</h2>
+      <p style="margin-left:auto; margin-right:auto;">{dict.segments.subtitle}</p>
+    </div>
+
+    <div class="segments-grid">
+      <div class="segment-card reveal">
+        <span class="segment-label">{dict.segments.seg_1_label}</span>
+        <h3>{dict.segments.seg_1_title}</h3>
+        <p>{dict.segments.seg_1_body}</p>
+      </div>
+      <div class="segment-card reveal">
+        <span class="segment-label">{dict.segments.seg_2_label}</span>
+        <h3>{dict.segments.seg_2_title}</h3>
+        <p>{dict.segments.seg_2_body}</p>
+      </div>
+      <div class="segment-card reveal">
+        <span class="segment-label">{dict.segments.seg_3_label}</span>
+        <h3>{dict.segments.seg_3_title}</h3>
+        <p>{dict.segments.seg_3_body}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ─────── SOLUTION ─────── -->
 <section class="block solution" id="how">
   <div class="container">
@@ -175,6 +286,40 @@ const team = [
   </div>
 </section>
 
+<!-- ─────── EMERGENCY (always-on free feature) ─────── -->
+<section class="emergency">
+  <div class="container">
+    <div class="emergency-grid">
+      <div class="emergency-copy reveal">
+        <span class="eyebrow">{dict.emergency.eyebrow}</span>
+        <h2>{dict.emergency.title}</h2>
+        <p>{dict.emergency.body}</p>
+        <ul class="emergency-feats">
+          <li>{dict.emergency.feat_1}</li>
+          <li>{dict.emergency.feat_2}</li>
+          <li>{dict.emergency.feat_3}</li>
+        </ul>
+      </div>
+      <div class="emergency-visual reveal" aria-hidden="true">
+        <div class="lockscreen">
+          <div class="lockscreen-time">9:42</div>
+          <div class="lockscreen-date">Tuesday, May 18</div>
+          <div class="lockscreen-card">
+            <div class="head">BioTrail · Notfall</div>
+            <div class="ls-title">Medical Emergency Info</div>
+            <div class="ls-rows">
+              <div class="row"><span class="lbl">Name</span><span class="val">A. Schmidt</span></div>
+              <div class="row"><span class="lbl">Blutgruppe</span><span class="val">O+</span></div>
+              <div class="row"><span class="lbl">Allergien</span><span class="val">Penicillin</span></div>
+              <div class="row"><span class="lbl">Medikamente</span><span class="val">Metformin</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ─────── PRICING (smoke test) ─────── -->
 <section class="block" id="pricing">
   <div class="container">
@@ -182,6 +327,14 @@ const team = [
       <span class="eyebrow" style="justify-content:center;">{dict.pricing.eyebrow}</span>
       <h2>{dict.pricing.title}</h2>
       <p style="margin-left:auto; margin-right:auto;">{dict.pricing.subtitle}</p>
+      <p class="pricing-subtitle-note">{dict.pricing.subtitle_note}</p>
+    </div>
+
+    <div class="pricing-toggle-wrap reveal">
+      <div class="pricing-toggle" role="tablist" aria-label="Billing period">
+        <button type="button" class="is-active" data-period="monthly" role="tab" aria-selected="true">{dict.pricing.toggle_monthly}</button>
+        <button type="button" data-period="yearly" role="tab" aria-selected="false">{dict.pricing.toggle_yearly}</button>
+      </div>
     </div>
 
     <div class="pricing-grid">
@@ -207,8 +360,8 @@ const team = [
         <span class="ribbon">{dict.pricing.plus_ribbon}</span>
         <div class="plan-name">{dict.pricing.plus_name}</div>
         <div class="plan-price">
-          <span class="num">{dict.pricing.plus_price}</span>
-          <span class="per">{dict.pricing.plus_period}</span>
+          <span class="num" data-monthly={dict.pricing.plus_price} data-yearly={dict.pricing.plus_price_yearly}>{dict.pricing.plus_price}</span>
+          <span class="per" data-monthly={dict.pricing.plus_period} data-yearly={dict.pricing.plus_period_yearly}>{dict.pricing.plus_period}</span>
         </div>
         <p class="plan-desc">{dict.pricing.plus_desc}</p>
         <ul>
@@ -219,14 +372,15 @@ const team = [
           <li>{dict.pricing.plus_feat_5}</li>
         </ul>
         <button class="btn btn-primary" data-open-modal data-plan="plus">{dict.pricing.plus_cta}</button>
+        <p class="plan-trial-note">{dict.pricing.plus_trial_note}</p>
       </div>
 
       <!-- Family plan -->
       <div class="plan reveal" data-plan="family">
         <div class="plan-name">{dict.pricing.family_name}</div>
         <div class="plan-price">
-          <span class="num">{dict.pricing.family_price}</span>
-          <span class="per">{dict.pricing.family_period}</span>
+          <span class="num" data-monthly={dict.pricing.family_price} data-yearly={dict.pricing.family_price_yearly}>{dict.pricing.family_price}</span>
+          <span class="per" data-monthly={dict.pricing.family_period} data-yearly={dict.pricing.family_period_yearly}>{dict.pricing.family_period}</span>
         </div>
         <p class="plan-desc">{dict.pricing.family_desc}</p>
         <ul>
@@ -243,8 +397,8 @@ const team = [
       <div class="plan reveal" data-plan="pro">
         <div class="plan-name">{dict.pricing.pro_name}</div>
         <div class="plan-price">
-          <span class="num">{dict.pricing.pro_price}</span>
-          <span class="per">{dict.pricing.pro_period}</span>
+          <span class="num" data-monthly={dict.pricing.pro_price} data-yearly={dict.pricing.pro_price_yearly}>{dict.pricing.pro_price}</span>
+          <span class="per" data-monthly={dict.pricing.pro_period} data-yearly={dict.pricing.pro_period_yearly}>{dict.pricing.pro_period}</span>
         </div>
         <p class="plan-desc">{dict.pricing.pro_desc}</p>
         <ul>
@@ -303,3 +457,30 @@ const team = [
     </div>
   </div>
 </section>
+
+<script is:inline>
+  (function () {
+    const toggle = document.querySelector('.pricing-toggle');
+    if (!toggle) return;
+    const grid = document.querySelector('.pricing-grid');
+    const buttons = toggle.querySelectorAll('button[data-period]');
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const period = btn.getAttribute('data-period');
+        buttons.forEach((b) => {
+          const active = b === btn;
+          b.classList.toggle('is-active', active);
+          b.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+        if (grid) grid.classList.toggle('is-yearly', period === 'yearly');
+        document.querySelectorAll('[data-monthly][data-yearly]').forEach((el) => {
+          const val = el.getAttribute(period === 'yearly' ? 'data-yearly' : 'data-monthly');
+          if (val !== null) el.textContent = val;
+        });
+        if (window.plausible) {
+          window.plausible('pricing_toggle', { props: { period } });
+        }
+      });
+    });
+  })();
+</script>
