@@ -1,12 +1,14 @@
 import { defineConfig } from 'astro/config';
-import vercel from '@astrojs/vercel/serverless';
+import vercel from '@astrojs/vercel';
 
 // https://astro.build/config
 export default defineConfig({
   // Vercel serverless adapter — required for the API route (/api/capture)
   // to handle form submissions. The marketing pages themselves are statically
   // pre-rendered (see `prerender = true` in src/pages/[lang]/index.astro).
-  output: 'hybrid',
+  // Astro 5: `output: 'static'` is the default; the API route opts into
+  // server rendering with `export const prerender = false`.
+  output: 'static',
   adapter: vercel(),
 
   // i18n routing.
