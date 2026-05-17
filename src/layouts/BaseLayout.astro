@@ -1,0 +1,68 @@
+---
+/**
+ * BaseLayout — every page renders inside this.
+ * Handles: <html lang+dir>, fonts, meta tags, Plausible analytics injection.
+ */
+import '~/styles/global.css';
+import { isRTL, getDict, type Locale } from '~/i18n';
+
+interface Props {
+  locale: Locale | string;
+  title?: string;
+  description?: string;
+}
+
+const { locale } = Astro.props;
+const dict = getDict(locale);
+const title = Astro.props.title ?? dict.meta.title;
+const description = Astro.props.description ?? dict.meta.description;
+const dir = isRTL(locale) ? 'rtl' : 'ltr';
+
+// Plausible Analytics — auto-loads only when domain env var is set.
+const plausibleDomain = import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN;
+const plausibleHost = import.meta.env.PUBLIC_PLAUSIBLE_HOST || 'https://plausible.io';
+---
+
+<!doctype html>
+<html lang={locale} dir={dir}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Open Graph / social previews -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:locale" content={locale} />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&display=swap"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Plausible Analytics — conditionally injected -->
+    {plausibleDomain && (
+      <script
+        defer
+        data-domain={plausibleDomain}
+        src={`${plausibleHost}/js/script.js`}
+      ></script>
+    )}
+    {plausibleDomain && (
+      <script is:inline define:vars={{ plausibleDomain }}>
+        window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments); };
+      </script>
+    )}
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

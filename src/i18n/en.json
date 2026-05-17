@@ -1,0 +1,130 @@
+{
+  "meta": {
+    "title": "BioTrail — Your medical history, ready in every language",
+    "description": "BioTrail organizes and translates your medical records so doctors understand you — and you understand them — from the very first visit in Germany."
+  },
+  "nav": {
+    "cta": "Get early access",
+    "language": "Language"
+  },
+  "notifications": {
+    "notif_1": "💊 Prescription uploaded — Translated in 4 seconds",
+    "notif_2": "🏥 47% of newcomers report language as a barrier to healthcare",
+    "notif_3": "🌍 Free during beta — reserve your spot"
+  },
+  "hero": {
+    "eyebrow": "For newcomers to Germany",
+    "title_a": "Your medical history,",
+    "title_b": "ready",
+    "title_c": "in every language.",
+    "subtitle": "BioTrail organizes and translates your records so doctors understand you — and you understand them — from the very first appointment.",
+    "cta_primary": "Get early access",
+    "cta_secondary": "See how it works",
+    "trust_1": "Free during beta",
+    "trust_2": "GDPR-first by design",
+    "trust_3": "Built in Frankfurt",
+    "badge_label": "Patient · First visit",
+    "badge_quote": "For the first time, my doctor actually understood my history."
+  },
+  "strip": {
+    "label": "A problem hiding in plain sight",
+    "stat_1_num": "1.93M",
+    "stat_1_lbl": "people moved to Germany in 2023",
+    "stat_2_num": "47%",
+    "stat_2_lbl": "report language as a barrier to healthcare",
+    "stat_3_num": "€0",
+    "stat_3_lbl": "currently spent translating their records"
+  },
+  "problem": {
+    "eyebrow": "The problem",
+    "title": "Healthcare shouldn't be lost in translation.",
+    "subtitle": "But for millions of newcomers in Germany, it is — at the exact moment they need to be understood the most.",
+    "card_1_title": "Language at the worst moment",
+    "card_1_body": "When you finally sit across from a doctor, the words you need most are the ones you don't have. Symptoms get misdescribed. Diagnoses get blurred.",
+    "card_2_title": "Lost records, lost time",
+    "card_2_body": "Your medical history lives in a clinic two countries away — in a language no one here reads. Half of every appointment gets spent on misunderstandings. You leave with a prescription you can't read."
+  },
+  "solution": {
+    "eyebrow": "How it works",
+    "title": "Three things BioTrail does, so you don't have to.",
+    "subtitle": "One wallet for your medical life. Built for the way you actually use it — in clinics, in emergencies, on your phone.",
+    "step_1_title": "Translate your records, once.",
+    "step_1_body": "Upload existing documents — prescriptions, vaccination cards, lab results, surgery notes. BioTrail translates, structures, and stores them in a single wallet that lives on your phone.",
+    "step_2_title": "Speak with confidence.",
+    "step_2_body": "Real-time translation during your appointment — voice, text, and documents. Show the doctor what you mean. Hear what they actually said. No more 'I think she said something about my heart.'",
+    "mock_translated": "Translated",
+    "mock_reviewing": "Reviewing",
+    "mock_you": "You",
+    "mock_doctor": "Doctor"
+  },
+  "pricing": {
+    "eyebrow": "Plans",
+    "title": "Start free. Upgrade when you need more.",
+    "subtitle": "Use BioTrail at no cost. When you're ready for real-time appointment translation and AI summaries, Premium has you covered.",
+    "free_name": "Free",
+    "free_price": "€0",
+    "free_period": "forever",
+    "free_desc": "Everything you need to start. Built for the first appointments.",
+    "free_feat_1": "Up to 5 medical documents",
+    "free_feat_2": "On-demand document translation",
+    "free_feat_3": "Secure cloud wallet",
+    "free_feat_4": "Standard support",
+    "free_cta": "Start free",
+    "premium_ribbon": "Most popular",
+    "premium_name": "Premium",
+    "premium_price": "€4.99",
+    "premium_period": "/ month",
+    "premium_desc": "For appointments where every word matters.",
+    "premium_feat_1": "Unlimited documents",
+    "premium_feat_2": "Real-time voice translation in appointments",
+    "premium_feat_3": "Doctor-ready summaries (AI-generated)",
+    "premium_feat_4": "Risk insights & medication alerts",
+    "premium_feat_5": "Priority support, 7 days a week",
+    "premium_cta": "Get Premium",
+    "footnote": "Beta launches Q1 2027. Early-access members keep their Premium price for life."
+  },
+  "about": {
+    "eyebrow": "Who's behind this",
+    "title": "Built by four founders who've each crossed a border.",
+    "body": "BioTrail is a project of four students at Frankfurt School of Finance & Management, born out of the Lean Startup Bootcamp 2026. We've all moved countries. We've all stared at a prescription we couldn't read. We're building the answer we wish we'd had.",
+    "role_co_founder": "Co-founder"
+  },
+  "cta_final": {
+    "eyebrow": "Beta launches Q1 2027",
+    "title": "Be the first to use BioTrail.",
+    "subtitle": "Reserve your spot. We'll let you know the moment we're live — no spam, no sharing, ever.",
+    "placeholder": "your@email.com",
+    "submit": "Reserve my spot"
+  },
+  "footer": {
+    "tagline": "Your medical history, ready in every language. Built in Frankfurt for newcomers to Germany.",
+    "col_product": "Product",
+    "col_product_1": "How it works",
+    "col_product_2": "Pricing",
+    "col_product_3": "Security",
+    "col_company": "Company",
+    "col_company_1": "About",
+    "col_company_2": "Contact",
+    "col_company_3": "Press",
+    "col_legal": "Legal",
+    "col_legal_1": "Privacy",
+    "col_legal_2": "Imprint",
+    "col_legal_3": "Terms",
+    "copyright": "© 2026 BioTrail. A Lean Startup Bootcamp project at Frankfurt School.",
+    "location": "Made with care in Frankfurt am Main"
+  },
+  "modal": {
+    "eyebrow": "You're early",
+    "title": "We're launching Q1 2027.",
+    "body": "That's the point. Reserve your spot — at no cost, no commitment. We'll email you the moment BioTrail is ready, and you'll keep your early-access pricing for life.",
+    "reserving_free": "Reserving: Free plan",
+    "reserving_premium": "Reserving: Premium · €4.99/mo",
+    "placeholder": "your@email.com",
+    "submit": "Reserve my spot",
+    "fine_print": "No spam. No sharing. Just one email when we go live.",
+    "success_title": "You're on the list.",
+    "success_body": "We'll email you the moment BioTrail is ready. Thank you for being early.",
+    "success_close": "Close",
+    "error": "Something went wrong. Please try again or email us directly."
+  }
+}

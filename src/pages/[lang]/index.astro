@@ -1,0 +1,34 @@
+---
+/**
+ * Main landing page. One file, rendered once per locale at build time.
+ * To add a new locale, add the JSON file in src/i18n/ + extend LOCALES.
+ */
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import NotificationBar from '~/components/NotificationBar.astro';
+import Nav from '~/components/Nav.astro';
+import Hero from '~/components/Hero.astro';
+import Sections from '~/components/Sections.astro';
+import Footer from '~/components/Footer.astro';
+import Modal from '~/components/Modal.astro';
+import { LOCALES, type Locale } from '~/i18n';
+
+// Pre-render this page statically at build time for each locale.
+// API routes (/api/capture) remain server-rendered because of output: 'hybrid'.
+export const prerender = true;
+
+export function getStaticPaths() {
+  return LOCALES.map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+const locale = (lang ?? 'en') as Locale;
+---
+
+<BaseLayout locale={locale}>
+  <NotificationBar locale={locale} />
+  <Nav locale={locale} />
+  <Hero locale={locale} />
+  <Sections locale={locale} />
+  <Footer locale={locale} />
+  <Modal locale={locale} />
+</BaseLayout>

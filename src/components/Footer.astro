@@ -1,0 +1,54 @@
+---
+import { getDict, type Locale } from '~/i18n';
+
+interface Props {
+  locale: Locale | string;
+}
+
+const { locale } = Astro.props;
+const dict = getDict(locale);
+---
+
+<footer>
+  <div class="container">
+    <div class="foot">
+      <div class="foot-left">
+        <a href={`/${locale}`} class="wordmark" aria-label="BioTrail">
+          Bio<em>Trail</em><span class="dot"></span>
+        </a>
+        <p>{dict.footer.tagline}</p>
+        <div class="foot-soon">
+          <span class="live">EN · Live</span>
+          <span class="live">DE · Live</span>
+          <span>TR · Soon</span>
+          <span>AR · Soon</span>
+          <span>UK · Soon</span>
+        </div>
+      </div>
+      <div class="foot-right">
+        <div class="foot-col">
+          <h4>{dict.footer.col_product}</h4>
+          <a href="#how">{dict.footer.col_product_1}</a>
+          <a href="#pricing">{dict.footer.col_product_2}</a>
+          <a href="#">{dict.footer.col_product_3}</a>
+        </div>
+        <div class="foot-col">
+          <h4>{dict.footer.col_company}</h4>
+          <a href="#">{dict.footer.col_company_1}</a>
+          <a href="mailto:hello@biotrail.com">{dict.footer.col_company_2}</a>
+          <a href="#">{dict.footer.col_company_3}</a>
+        </div>
+        <div class="foot-col">
+          <h4>{dict.footer.col_legal}</h4>
+          <a href="#">{dict.footer.col_legal_1}</a>
+          <a href="#">{dict.footer.col_legal_2}</a>
+          <a href="#">{dict.footer.col_legal_3}</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>{dict.footer.copyright}</span>
+      <span>{dict.footer.location}</span>
+    </div>
+  </div>
+</footer>

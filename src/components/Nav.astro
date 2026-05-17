@@ -1,0 +1,92 @@
+---
+import { getDict, LOCALES, SOON_LOCALES, LOCALE_NAMES, LOCALE_FLAGS, type Locale } from '~/i18n';
+
+interface Props {
+  locale: Locale | string;
+}
+
+const { locale } = Astro.props;
+const dict = getDict(locale);
+
+// Order: live locales first (active first), then "soon" locales.
+const liveLocales = LOCALES;
+const soonLocales = SOON_LOCALES;
+---
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href={`/${locale}`} class="wordmark" aria-label="BioTrail">
+      Bio<em>Trail</em><span class="dot" aria-hidden="true"></span>
+    </a>
+    <div class="nav-actions">
+      <div class="lang-switch">
+        <button class="lang-trigger" id="langBtn" aria-haspopup="true" aria-expanded="false" aria-label={dict.nav.language}>
+          <span class="lang-flag" aria-hidden="true">{LOCALE_FLAGS[locale] ?? ''}</span>
+          <span>{locale.toUpperCase()}</span>
+          <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <path d="M1 1l4 4 4-4"/>
+          </svg>
+        </button>
+        <div class="lang-menu" id="langMenu" role="menu">
+          {liveLocales.map((l) => (
+            <a href={`/${l}`} class={l === locale ? 'active' : ''} role="menuitem">
+              {LOCALE_NAMES[l]}
+              <span></span>
+            </a>
+          ))}
+          {soonLocales.map((l) => (
+            <button data-soon={l} role="menuitem" type="button">
+              {LOCALE_NAMES[l]}
+              <span class="soon">Soon</span>
+            </button>
+          ))}
+        </div>
+      </div>
+      <button class="btn btn-primary" data-open-modal data-plan="general">
+        {dict.nav.cta}
+      </button>
+    </div>
+  </div>
+</nav>
+
+<script is:inline>
+  // Nav scroll state
+  (function () {
+    const nav = document.getElementById('nav');
+    if (!nav) return;
+    const onScroll = () => {
+      if (window.scrollY > 8) nav.classList.add('is-scrolled');
+      else nav.classList.remove('is-scrolled');
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+
+  // Language menu open/close
+  (function () {
+    const btn = document.getElementById('langBtn');
+    const menu = document.getElementById('langMenu');
+    if (!btn || !menu) return;
+
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = menu.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    document.addEventListener('click', () => {
+      menu.classList.remove('is-open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+
+    // "Soon" locales: show a friendly message + track interest
+    menu.querySelectorAll('[data-soon]').forEach((el) => {
+      el.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const lang = el.getAttribute('data-soon');
+        if (window.plausible) window.plausible('lang_interest', { props: { lang } });
+        alert('This language is coming in phase 2. For now, English and German are fully live.');
+      });
+    });
+  })();
+</script>

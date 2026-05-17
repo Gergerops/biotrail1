@@ -1,0 +1,130 @@
+{
+  "meta": {
+    "title": "BioTrail — Deine Krankengeschichte. In jeder Sprache bereit.",
+    "description": "BioTrail organisiert und übersetzt deine medizinischen Unterlagen — damit Ärzte dich verstehen und du sie verstehst, vom allerersten Termin an."
+  },
+  "nav": {
+    "cta": "Early Access sichern",
+    "language": "Sprache"
+  },
+  "notifications": {
+    "notif_1": "💊 Rezept hochgeladen — In 4 Sekunden übersetzt",
+    "notif_2": "🏥 47 % der Neuankömmlinge nennen Sprache als Barriere zur Gesundheitsversorgung",
+    "notif_3": "🌍 Während der Beta kostenlos — Platz sichern"
+  },
+  "hero": {
+    "eyebrow": "Für alle, die neu in Deutschland sind",
+    "title_a": "Deine Krankengeschichte.",
+    "title_b": "Bereit",
+    "title_c": "in jeder Sprache.",
+    "subtitle": "BioTrail organisiert und übersetzt deine Unterlagen — damit Ärzte dich verstehen und du sie verstehst, vom allerersten Termin an.",
+    "cta_primary": "Early Access sichern",
+    "cta_secondary": "So funktioniert's",
+    "trust_1": "Während der Beta kostenlos",
+    "trust_2": "DSGVO-konform by Design",
+    "trust_3": "Made in Frankfurt",
+    "badge_label": "Patientin · Erster Termin",
+    "badge_quote": "Zum ersten Mal hat meine Ärztin meine Geschichte wirklich verstanden."
+  },
+  "strip": {
+    "label": "Ein Problem, das niemand sieht",
+    "stat_1_num": "1,93 Mio.",
+    "stat_1_lbl": "Menschen sind 2023 nach Deutschland gezogen",
+    "stat_2_num": "47 %",
+    "stat_2_lbl": "nennen Sprache als Barriere zur Gesundheitsversorgung",
+    "stat_3_num": "0 €",
+    "stat_3_lbl": "werden aktuell für Übersetzungen ausgegeben"
+  },
+  "problem": {
+    "eyebrow": "Das Problem",
+    "title": "Gesundheit darf nicht an der Sprache scheitern.",
+    "subtitle": "Für Millionen Menschen, die neu in Deutschland sind, tut sie es trotzdem — genau dann, wenn sie verstanden werden müssen.",
+    "card_1_title": "Sprache im falschen Moment",
+    "card_1_body": "Wenn du endlich vor der Ärztin sitzt, fehlen dir genau die Worte, die du am dringendsten brauchst. Symptome werden ungenau beschrieben. Diagnosen bleiben vage.",
+    "card_2_title": "Verlorene Unterlagen, verlorene Zeit",
+    "card_2_body": "Deine Krankengeschichte liegt in einer Klinik zwei Länder entfernt — in einer Sprache, die hier niemand liest. Die Hälfte jedes Termins geht für Missverständnisse drauf. Du gehst mit einem Rezept raus, das du nicht lesen kannst."
+  },
+  "solution": {
+    "eyebrow": "So funktioniert's",
+    "title": "Drei Dinge, die BioTrail übernimmt — damit du es nicht musst.",
+    "subtitle": "Eine Wallet für dein medizinisches Leben. Gebaut für den Alltag — in der Praxis, im Notfall, auf deinem Handy.",
+    "step_1_title": "Unterlagen einmal übersetzen.",
+    "step_1_body": "Lade bestehende Dokumente hoch — Rezepte, Impfpässe, Laborbefunde, OP-Berichte. BioTrail übersetzt, strukturiert und speichert sie in einer einzigen Wallet auf deinem Handy.",
+    "step_2_title": "Selbstbewusst sprechen.",
+    "step_2_body": "Echtzeit-Übersetzung im Termin — Stimme, Text, Dokumente. Zeig der Ärztin, was du meinst. Hör, was sie wirklich gesagt hat. Schluss mit „Ich glaube, sie hat was zu meinem Herz gesagt.\"",
+    "mock_translated": "Übersetzt",
+    "mock_reviewing": "In Prüfung",
+    "mock_you": "Du",
+    "mock_doctor": "Arzt"
+  },
+  "pricing": {
+    "eyebrow": "Tarife",
+    "title": "Kostenlos starten. Upgrade, wenn du mehr brauchst.",
+    "subtitle": "Nutze BioTrail kostenlos. Wenn du Echtzeit-Übersetzung im Termin und KI-Zusammenfassungen brauchst, ist Premium für dich da.",
+    "free_name": "Kostenlos",
+    "free_price": "0 €",
+    "free_period": "für immer",
+    "free_desc": "Alles, was du zum Start brauchst. Gebaut für die ersten Termine.",
+    "free_feat_1": "Bis zu 5 medizinische Dokumente",
+    "free_feat_2": "Dokumentenübersetzung auf Anfrage",
+    "free_feat_3": "Sichere Cloud-Wallet",
+    "free_feat_4": "Standard-Support",
+    "free_cta": "Kostenlos starten",
+    "premium_ribbon": "Am beliebtesten",
+    "premium_name": "Premium",
+    "premium_price": "4,99 €",
+    "premium_period": "/ Monat",
+    "premium_desc": "Für Termine, in denen jedes Wort zählt.",
+    "premium_feat_1": "Unbegrenzte Dokumente",
+    "premium_feat_2": "Echtzeit-Sprachübersetzung im Termin",
+    "premium_feat_3": "Arztgerechte KI-Zusammenfassungen",
+    "premium_feat_4": "Risiko-Hinweise & Medikations-Warnungen",
+    "premium_feat_5": "Priority-Support, 7 Tage die Woche",
+    "premium_cta": "Premium sichern",
+    "footnote": "Beta-Start Q1 2027. Early-Access-Mitglieder behalten ihren Premium-Preis lebenslang."
+  },
+  "about": {
+    "eyebrow": "Wer dahinter steht",
+    "title": "Gebaut von vier Gründerinnen, die alle eine Grenze überquert haben.",
+    "body": "BioTrail ist ein Projekt von vier Studentinnen der Frankfurt School of Finance & Management, entstanden im Lean Startup Bootcamp 2026. Wir sind alle umgezogen. Wir haben alle vor einem Rezept gestanden, das wir nicht lesen konnten. Jetzt bauen wir die Lösung, die wir uns selbst gewünscht hätten.",
+    "role_co_founder": "Co-Founder"
+  },
+  "cta_final": {
+    "eyebrow": "Beta-Start Q1 2027",
+    "title": "Sei eine der Ersten.",
+    "subtitle": "Sichere dir deinen Platz. Wir melden uns, sobald BioTrail live geht — kein Spam, keine Weitergabe, nie.",
+    "placeholder": "deine@email.com",
+    "submit": "Platz reservieren"
+  },
+  "footer": {
+    "tagline": "Deine Krankengeschichte. In jeder Sprache bereit. Gebaut in Frankfurt für alle, die neu in Deutschland sind.",
+    "col_product": "Produkt",
+    "col_product_1": "So funktioniert's",
+    "col_product_2": "Tarife",
+    "col_product_3": "Sicherheit",
+    "col_company": "Unternehmen",
+    "col_company_1": "Über uns",
+    "col_company_2": "Kontakt",
+    "col_company_3": "Presse",
+    "col_legal": "Rechtliches",
+    "col_legal_1": "Datenschutz",
+    "col_legal_2": "Impressum",
+    "col_legal_3": "AGB",
+    "copyright": "© 2026 BioTrail. Ein Lean Startup Bootcamp-Projekt der Frankfurt School.",
+    "location": "Mit Sorgfalt gebaut in Frankfurt am Main"
+  },
+  "modal": {
+    "eyebrow": "Du bist früh dran",
+    "title": "Wir starten Q1 2027.",
+    "body": "Genau das ist der Punkt. Reserviere deinen Platz — kostenlos, unverbindlich. Wir melden uns, sobald BioTrail bereit ist, und du behältst deinen Early-Access-Preis lebenslang.",
+    "reserving_free": "Reservierung: Kostenlos-Tarif",
+    "reserving_premium": "Reservierung: Premium · 4,99 €/Mon.",
+    "placeholder": "deine@email.com",
+    "submit": "Platz reservieren",
+    "fine_print": "Kein Spam. Keine Weitergabe. Eine Mail, wenn wir live sind.",
+    "success_title": "Du bist auf der Liste.",
+    "success_body": "Wir melden uns, sobald BioTrail bereit ist. Danke, dass du so früh dabei bist.",
+    "success_close": "Schließen",
+    "error": "Etwas ist schiefgelaufen. Bitte versuch es noch einmal oder schreib uns direkt."
+  }
+}

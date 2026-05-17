@@ -1,0 +1,6 @@
+---
+// Root index — redirects to the default locale.
+// Astro's i18n routing handles this declaratively via redirectToDefaultLocale,
+// but we keep this file as an explicit fallback in case a deploy strips it.
+return Astro.redirect('/en', 302);
+---

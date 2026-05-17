@@ -1,0 +1,200 @@
+---
+/**
+ * Modal — the Buffer-style smoke-test email capture.
+ * Triggered by any element with [data-open-modal] and a [data-plan] attribute.
+ * Submits to /api/capture which forwards to Resend and notifies the team.
+ * Fires Plausible custom events for funnel tracking.
+ */
+import { getDict, type Locale } from '~/i18n';
+
+interface Props {
+  locale: Locale | string;
+}
+
+const { locale } = Astro.props;
+const dict = getDict(locale);
+---
+
+<div class="modal-backdrop" id="modal">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+
+    <div id="modalDefault">
+      <span class="eyebrow">{dict.modal.eyebrow}</span>
+      <h3 id="modalTitle">{dict.modal.title}</h3>
+      <p>{dict.modal.body}</p>
+      <div class="modal-plan-pill" id="modalPill"></div>
+      <form id="modalForm">
+        <input
+          type="email"
+          required
+          placeholder={dict.modal.placeholder}
+          aria-label="Email address"
+          name="email"
+        />
+        <button class="btn btn-primary" type="submit">{dict.modal.submit} →</button>
+      </form>
+      <p class="modal-error" id="modalError">{dict.modal.error}</p>
+      <p class="modal-fine">{dict.modal.fine_print}</p>
+    </div>
+
+    <div id="modalSuccess" class="modal-success" style="display:none;">
+      <div class="check">✓</div>
+      <h3 style="font-size:26px;">{dict.modal.success_title}</h3>
+      <p style="margin-top:14px;" id="modalSuccessBody">{dict.modal.success_body}</p>
+      <button class="btn btn-ghost" id="modalSuccessClose" style="margin-top:24px;">
+        {dict.modal.success_close}
+      </button>
+    </div>
+  </div>
+</div>
+
+<script
+  is:inline
+  define:vars={{
+    locale,
+    labels: {
+      reserving_free: dict.modal.reserving_free,
+      reserving_premium: dict.modal.reserving_premium,
+      title_default: dict.modal.title,
+      title_free: dict.pricing.free_cta + ' →',
+      title_premium: dict.pricing.premium_cta + ' →',
+    },
+  }}
+>
+  (function () {
+    const modal = document.getElementById('modal');
+    const closeBtn = document.getElementById('modalClose');
+    const form = document.getElementById('modalForm');
+    const pill = document.getElementById('modalPill');
+    const errorEl = document.getElementById('modalError');
+    const defaultView = document.getElementById('modalDefault');
+    const successView = document.getElementById('modalSuccess');
+    const successCloseBtn = document.getElementById('modalSuccessClose');
+    let currentPlan = 'general';
+
+    function open(plan) {
+      currentPlan = plan || 'general';
+
+      // Reset views
+      defaultView.style.display = '';
+      successView.style.display = 'none';
+      errorEl.classList.remove('show');
+      form.querySelector('input').value = '';
+
+      // Set plan pill
+      if (currentPlan === 'premium') {
+        pill.innerHTML = labels.reserving_premium.replace(/(\S.+)/, '<strong>$1</strong>');
+        pill.classList.add('show');
+      } else if (currentPlan === 'free') {
+        pill.innerHTML = labels.reserving_free.replace(/(\S.+)/, '<strong>$1</strong>');
+        pill.classList.add('show');
+      } else {
+        pill.classList.remove('show');
+      }
+
+      modal.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+
+      // Plausible event — opens count as funnel-top
+      if (window.plausible) {
+        window.plausible('modal_open', { props: { plan: currentPlan, locale } });
+      }
+    }
+
+    function close() {
+      modal.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+
+    // Open triggers
+    document.querySelectorAll('[data-open-modal]').forEach((el) => {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        open(el.getAttribute('data-plan') || 'general');
+      });
+    });
+
+    // Close triggers
+    closeBtn.addEventListener('click', close);
+    successCloseBtn.addEventListener('click', close);
+    modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('is-open')) close();
+    });
+
+    // Submit handler — hits /api/capture
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      errorEl.classList.remove('show');
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = '...';
+
+      const email = form.querySelector('input').value;
+
+      try {
+        const res = await fetch('/api/capture', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, plan: currentPlan, locale, source: 'modal' }),
+        });
+
+        if (!res.ok) throw new Error('capture failed');
+
+        // Show success view
+        defaultView.style.display = 'none';
+        successView.style.display = '';
+
+        // Plausible conversion event — THIS is the smoke-test signal
+        if (window.plausible) {
+          window.plausible('signup', { props: { plan: currentPlan, locale, source: 'modal' } });
+        }
+      } catch (err) {
+        errorEl.classList.add('show');
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+      }
+    });
+
+    // CTA-Final form (footer signup)
+    const ctaForm = document.querySelector('[data-cta-form]');
+    if (ctaForm) {
+      ctaForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email = ctaForm.querySelector('input').value;
+        const submitBtn = ctaForm.querySelector('button');
+        submitBtn.disabled = true;
+
+        try {
+          await fetch('/api/capture', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, plan: 'cta_final', locale, source: 'footer_cta' }),
+          });
+          ctaForm.innerHTML = '<p class="success-msg">✓ ' + email + '</p>';
+          if (window.plausible) {
+            window.plausible('signup', { props: { plan: 'cta_final', locale, source: 'footer_cta' } });
+          }
+        } catch (err) {
+          submitBtn.disabled = false;
+          alert('Something went wrong. Please try again.');
+        }
+      });
+    }
+  })();
+
+  // Reveal-on-scroll for all .reveal elements
+  (function () {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (en.isIntersecting) {
+          en.target.classList.add('is-visible');
+          io.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+  })();
+</script>

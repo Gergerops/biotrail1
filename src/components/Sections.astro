@@ -1,0 +1,214 @@
+---
+/**
+ * All marketing sections of the landing page, in order:
+ * Strip → Problem → Solution → Pricing → About → CtaFinal
+ *
+ * Kept in one file to make iteration on copy + flow easier.
+ * Split into separate components later if any section gets reused elsewhere.
+ */
+import { getDict, type Locale } from '~/i18n';
+
+interface Props {
+  locale: Locale | string;
+}
+
+const { locale } = Astro.props;
+const dict = getDict(locale);
+
+const team = [
+  { initial: 'C', name: 'Chanelle Day-Claessen' },
+  { initial: 'H', name: 'Helena Gottwald' },
+  { initial: 'K', name: 'Kristina Timokhova' },
+  { initial: 'H', name: 'Héloïse Brouillette' },
+];
+---
+
+<!-- ─────── PROBLEM ─────── -->
+<section class="block">
+  <div class="container">
+    <div class="block-head reveal">
+      <span class="eyebrow">{dict.problem.eyebrow}</span>
+      <h2>{dict.problem.title}</h2>
+      <p>{dict.problem.subtitle}</p>
+    </div>
+    <div class="problems">
+      <div class="problem-card reveal">
+        <div class="num">01</div>
+        <h3>{dict.problem.card_1_title}</h3>
+        <p>{dict.problem.card_1_body}</p>
+      </div>
+      <div class="problem-card reveal">
+        <div class="num">02</div>
+        <h3>{dict.problem.card_2_title}</h3>
+        <p>{dict.problem.card_2_body}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────── SOLUTION ─────── -->
+<section class="block solution" id="how">
+  <div class="container">
+    <div class="block-head reveal">
+      <span class="eyebrow">{dict.solution.eyebrow}</span>
+      <h2>{dict.solution.title}</h2>
+      <p>{dict.solution.subtitle}</p>
+    </div>
+
+    <div class="steps">
+      <!-- Step 1 -->
+      <div class="step reveal">
+        <div class="step-text">
+          <div class="num">01</div>
+          <h3>{dict.solution.step_1_title}</h3>
+          <p>{dict.solution.step_1_body}</p>
+        </div>
+        <div class="step-visual" aria-hidden="true">
+          <span class="mock-lang">EN ↔ TR</span>
+          <div class="mock-row">
+            <div class="dot blue"></div>
+            <div class="lines"><div class="l1"></div><div class="l2"></div></div>
+            <span class="badge">{dict.solution.mock_translated}</span>
+          </div>
+          <div class="mock-row">
+            <div class="dot green"></div>
+            <div class="lines"><div class="l1" style="width:50%"></div><div class="l2" style="width:75%"></div></div>
+            <span class="badge">{dict.solution.mock_translated}</span>
+          </div>
+          <div class="mock-row">
+            <div class="dot gold"></div>
+            <div class="lines"><div class="l1" style="width:70%"></div><div class="l2" style="width:85%"></div></div>
+            <span class="badge gold">{dict.solution.mock_reviewing}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step reverse reveal">
+        <div class="step-text">
+          <div class="num">02</div>
+          <h3>{dict.solution.step_2_title}</h3>
+          <p>{dict.solution.step_2_body}</p>
+        </div>
+        <div class="step-visual" aria-hidden="true">
+          <div class="mock-translate">
+            <div class="from">
+              <small>{dict.solution.mock_you} (TR)</small>
+              <strong>Karnım ağrıyor</strong>
+            </div>
+            <div class="arrow">→</div>
+            <div class="to">
+              <small>{dict.solution.mock_doctor} (DE)</small>
+              <strong>Ich habe Bauchschmerzen</strong>
+            </div>
+          </div>
+          <div class="mock-translate" style="background: linear-gradient(135deg, #FAFAF6 0%, #F3EFE7 100%);">
+            <div class="from">
+              <small>{dict.solution.mock_doctor} (DE)</small>
+              <strong>Seit wann?</strong>
+            </div>
+            <div class="arrow">→</div>
+            <div class="to">
+              <small>{dict.solution.mock_you} (TR)</small>
+              <strong>Ne zamandan beri?</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─────── PRICING (smoke test) ─────── -->
+<section class="block" id="pricing">
+  <div class="container">
+    <div class="block-head reveal" style="margin-left:auto; margin-right:auto; text-align:center; max-width: 640px;">
+      <span class="eyebrow" style="justify-content:center;">{dict.pricing.eyebrow}</span>
+      <h2>{dict.pricing.title}</h2>
+      <p style="margin-left:auto; margin-right:auto;">{dict.pricing.subtitle}</p>
+    </div>
+
+    <div class="pricing-grid">
+      <!-- Free plan -->
+      <div class="plan reveal">
+        <div class="plan-name">{dict.pricing.free_name}</div>
+        <div class="plan-price">
+          <span class="num">{dict.pricing.free_price}</span>
+          <span class="per">{dict.pricing.free_period}</span>
+        </div>
+        <p class="plan-desc">{dict.pricing.free_desc}</p>
+        <ul>
+          <li>{dict.pricing.free_feat_1}</li>
+          <li>{dict.pricing.free_feat_2}</li>
+          <li>{dict.pricing.free_feat_3}</li>
+          <li>{dict.pricing.free_feat_4}</li>
+        </ul>
+        <button class="btn btn-ghost" data-open-modal data-plan="free">{dict.pricing.free_cta}</button>
+      </div>
+
+      <!-- Premium plan -->
+      <div class="plan plan-pop reveal">
+        <span class="ribbon">{dict.pricing.premium_ribbon}</span>
+        <div class="plan-name">{dict.pricing.premium_name}</div>
+        <div class="plan-price">
+          <span class="num">{dict.pricing.premium_price}</span>
+          <span class="per">{dict.pricing.premium_period}</span>
+        </div>
+        <p class="plan-desc">{dict.pricing.premium_desc}</p>
+        <ul>
+          <li>{dict.pricing.premium_feat_1}</li>
+          <li>{dict.pricing.premium_feat_2}</li>
+          <li>{dict.pricing.premium_feat_3}</li>
+          <li>{dict.pricing.premium_feat_4}</li>
+          <li>{dict.pricing.premium_feat_5}</li>
+        </ul>
+        <button class="btn btn-primary" data-open-modal data-plan="premium">{dict.pricing.premium_cta}</button>
+      </div>
+    </div>
+    <p class="pricing-note">{dict.pricing.footnote}</p>
+  </div>
+</section>
+
+<!-- ─────── ABOUT ─────── -->
+<section class="block about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="reveal">
+        <span class="eyebrow">{dict.about.eyebrow}</span>
+        <h2>{dict.about.title}</h2>
+        <p>{dict.about.body}</p>
+      </div>
+      <div class="team reveal">
+        {team.map((p) => (
+          <div class="team-row">
+            <div class="initial">{p.initial}</div>
+            <div class="name">{p.name}</div>
+            <div class="role">{dict.about.role_co_founder}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────── CTA FINAL ─────── -->
+<section class="cta-final">
+  <div class="container">
+    <div class="reveal">
+      <span class="eyebrow" style="justify-content:center;">{dict.cta_final.eyebrow}</span>
+      <h2 style="margin-top: 18px;">{dict.cta_final.title}</h2>
+      <p>{dict.cta_final.subtitle}</p>
+      <form id="ctaForm" data-cta-form>
+        <input
+          type="email"
+          required
+          placeholder={dict.cta_final.placeholder}
+          aria-label="Email address"
+          name="email"
+        />
+        <button class="btn btn-primary btn-arrow" type="submit">{dict.cta_final.submit}</button>
+      </form>
+    </div>
+  </div>
+</section>
