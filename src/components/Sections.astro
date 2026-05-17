@@ -57,7 +57,7 @@ const team = [
     </div>
 
     <div class="steps">
-      <!-- Step 1 -->
+      <!-- Step 1: Records translation -->
       <div class="step reveal">
         <div class="step-text">
           <div class="num">01</div>
@@ -84,7 +84,7 @@ const team = [
         </div>
       </div>
 
-      <!-- Step 2 -->
+      <!-- Step 2: Live translation -->
       <div class="step reverse reveal">
         <div class="step-text">
           <div class="num">02</div>
@@ -117,6 +117,60 @@ const team = [
         </div>
       </div>
 
+      <!-- Step 3: System guide -->
+      <div class="step reveal">
+        <div class="step-text">
+          <div class="num">03</div>
+          <h3>{dict.solution.step_3_title}</h3>
+          <p>{dict.solution.step_3_body}</p>
+        </div>
+        <div class="step-visual" aria-hidden="true">
+          <span class="mock-lang">{dict.solution.glossary_lang}</span>
+          <div class="mock-row">
+            <div class="mock-text">
+              <strong>{dict.solution.glossary_term_1}</strong>
+              <small>{dict.solution.glossary_desc_1}</small>
+            </div>
+          </div>
+          <div class="mock-row">
+            <div class="mock-text">
+              <strong>{dict.solution.glossary_term_2}</strong>
+              <small>{dict.solution.glossary_desc_2}</small>
+            </div>
+          </div>
+          <div class="mock-row">
+            <div class="mock-text">
+              <strong>{dict.solution.glossary_term_3}</strong>
+              <small>{dict.solution.glossary_desc_3}</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 4: Insurance link -->
+      <div class="step reverse reveal">
+        <div class="step-text">
+          <div class="num">04</div>
+          <h3>{dict.solution.step_4_title}</h3>
+          <p>{dict.solution.step_4_body}</p>
+        </div>
+        <div class="step-visual" aria-hidden="true">
+          <span class="mock-lang">{dict.solution.insurance_lang}</span>
+          <div class="mock-row">
+            <div class="mock-text"><strong>{dict.solution.insurance_row_1}</strong></div>
+            <span class="badge">{dict.solution.insurance_badge_1}</span>
+          </div>
+          <div class="mock-row">
+            <div class="mock-text"><strong>{dict.solution.insurance_row_2}</strong></div>
+            <span class="badge gold">{dict.solution.insurance_badge_2}</span>
+          </div>
+          <div class="mock-row">
+            <div class="mock-text"><strong>{dict.solution.insurance_row_3}</strong></div>
+            <span class="badge red">{dict.solution.insurance_badge_3}</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -132,7 +186,7 @@ const team = [
 
     <div class="pricing-grid">
       <!-- Free plan -->
-      <div class="plan reveal">
+      <div class="plan reveal" data-plan="free">
         <div class="plan-name">{dict.pricing.free_name}</div>
         <div class="plan-price">
           <span class="num">{dict.pricing.free_price}</span>
@@ -148,23 +202,59 @@ const team = [
         <button class="btn btn-ghost" data-open-modal data-plan="free">{dict.pricing.free_cta}</button>
       </div>
 
-      <!-- Premium plan -->
-      <div class="plan plan-pop reveal">
-        <span class="ribbon">{dict.pricing.premium_ribbon}</span>
-        <div class="plan-name">{dict.pricing.premium_name}</div>
+      <!-- Plus plan (popular) -->
+      <div class="plan plan-pop reveal" data-plan="plus">
+        <span class="ribbon">{dict.pricing.plus_ribbon}</span>
+        <div class="plan-name">{dict.pricing.plus_name}</div>
         <div class="plan-price">
-          <span class="num">{dict.pricing.premium_price}</span>
-          <span class="per">{dict.pricing.premium_period}</span>
+          <span class="num">{dict.pricing.plus_price}</span>
+          <span class="per">{dict.pricing.plus_period}</span>
         </div>
-        <p class="plan-desc">{dict.pricing.premium_desc}</p>
+        <p class="plan-desc">{dict.pricing.plus_desc}</p>
         <ul>
-          <li>{dict.pricing.premium_feat_1}</li>
-          <li>{dict.pricing.premium_feat_2}</li>
-          <li>{dict.pricing.premium_feat_3}</li>
-          <li>{dict.pricing.premium_feat_4}</li>
-          <li>{dict.pricing.premium_feat_5}</li>
+          <li>{dict.pricing.plus_feat_1}</li>
+          <li>{dict.pricing.plus_feat_2}</li>
+          <li>{dict.pricing.plus_feat_3}</li>
+          <li>{dict.pricing.plus_feat_4}</li>
+          <li>{dict.pricing.plus_feat_5}</li>
         </ul>
-        <button class="btn btn-primary" data-open-modal data-plan="premium">{dict.pricing.premium_cta}</button>
+        <button class="btn btn-primary" data-open-modal data-plan="plus">{dict.pricing.plus_cta}</button>
+      </div>
+
+      <!-- Family plan -->
+      <div class="plan reveal" data-plan="family">
+        <div class="plan-name">{dict.pricing.family_name}</div>
+        <div class="plan-price">
+          <span class="num">{dict.pricing.family_price}</span>
+          <span class="per">{dict.pricing.family_period}</span>
+        </div>
+        <p class="plan-desc">{dict.pricing.family_desc}</p>
+        <ul>
+          <li>{dict.pricing.family_feat_1}</li>
+          <li>{dict.pricing.family_feat_2}</li>
+          <li>{dict.pricing.family_feat_3}</li>
+          <li>{dict.pricing.family_feat_4}</li>
+          <li>{dict.pricing.family_feat_5}</li>
+        </ul>
+        <button class="btn btn-ghost" data-open-modal data-plan="family">{dict.pricing.family_cta}</button>
+      </div>
+
+      <!-- Pro plan -->
+      <div class="plan reveal" data-plan="pro">
+        <div class="plan-name">{dict.pricing.pro_name}</div>
+        <div class="plan-price">
+          <span class="num">{dict.pricing.pro_price}</span>
+          <span class="per">{dict.pricing.pro_period}</span>
+        </div>
+        <p class="plan-desc">{dict.pricing.pro_desc}</p>
+        <ul>
+          <li>{dict.pricing.pro_feat_1}</li>
+          <li>{dict.pricing.pro_feat_2}</li>
+          <li>{dict.pricing.pro_feat_3}</li>
+          <li>{dict.pricing.pro_feat_4}</li>
+          <li>{dict.pricing.pro_feat_5}</li>
+        </ul>
+        <button class="btn btn-ghost" data-open-modal data-plan="pro">{dict.pricing.pro_cta}</button>
       </div>
     </div>
     <p class="pricing-note">{dict.pricing.footnote}</p>

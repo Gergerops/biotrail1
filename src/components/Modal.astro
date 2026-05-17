@@ -55,10 +55,9 @@ const dict = getDict(locale);
     locale,
     labels: {
       reserving_free: dict.modal.reserving_free,
-      reserving_premium: dict.modal.reserving_premium,
-      title_default: dict.modal.title,
-      title_free: dict.pricing.free_cta + ' →',
-      title_premium: dict.pricing.premium_cta + ' →',
+      reserving_plus: dict.modal.reserving_plus,
+      reserving_family: dict.modal.reserving_family,
+      reserving_pro: dict.modal.reserving_pro,
     },
   }}
 >
@@ -83,11 +82,15 @@ const dict = getDict(locale);
       form.querySelector('input').value = '';
 
       // Set plan pill
-      if (currentPlan === 'premium') {
-        pill.innerHTML = labels.reserving_premium.replace(/(\S.+)/, '<strong>$1</strong>');
-        pill.classList.add('show');
-      } else if (currentPlan === 'free') {
-        pill.innerHTML = labels.reserving_free.replace(/(\S.+)/, '<strong>$1</strong>');
+      const pillLabels = {
+        free: labels.reserving_free,
+        plus: labels.reserving_plus,
+        family: labels.reserving_family,
+        pro: labels.reserving_pro,
+      };
+      const pillLabel = pillLabels[currentPlan];
+      if (pillLabel) {
+        pill.innerHTML = pillLabel.replace(/(\S.+)/, '<strong>$1</strong>');
         pill.classList.add('show');
       } else {
         pill.classList.remove('show');
