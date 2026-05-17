@@ -302,27 +302,47 @@ const team = [
       </div>
       <div class="emergency-visual reveal" aria-hidden="true">
         <div class="lockscreen-mockup" aria-hidden="true">
+          <div class="lockscreen-island"></div>
           <div class="lockscreen-statusbar">
-            <span class="time">9:41</span>
-            <span class="indicators">●●●● 5G ◼◼◼</span>
+            <span class="time-small">9:41</span>
+            <span class="indicators">
+              <svg width="17" height="11" viewBox="0 0 17 11" fill="white" aria-hidden="true">
+                <rect x="0" y="7" width="3" height="4" rx="0.5"/>
+                <rect x="4" y="5" width="3" height="6" rx="0.5"/>
+                <rect x="8" y="3" width="3" height="8" rx="0.5"/>
+                <rect x="12" y="0" width="3" height="11" rx="0.5"/>
+              </svg>
+              <svg width="16" height="11" viewBox="0 0 16 11" fill="none" stroke="white" stroke-width="1.5" aria-hidden="true">
+                <path d="M1.5 4.5C3.5 2.5 6 1.5 8 1.5C10 1.5 12.5 2.5 14.5 4.5M3.5 6.5C5 5 6.5 4.5 8 4.5C9.5 4.5 11 5 12.5 6.5M5.5 8.5C6.5 7.5 7.5 7 8 7C8.5 7 9.5 7.5 10.5 8.5"/>
+                <circle cx="8" cy="10" r="1" fill="white"/>
+              </svg>
+              <svg width="24" height="11" viewBox="0 0 24 11" fill="none" aria-hidden="true">
+                <rect x="0.5" y="0.5" width="20" height="10" rx="2" stroke="white" stroke-opacity="0.5"/>
+                <rect x="2" y="2" width="17" height="7" rx="1" fill="white"/>
+                <rect x="21" y="3.5" width="1.5" height="4" rx="0.5" fill="white" fill-opacity="0.5"/>
+              </svg>
+            </span>
           </div>
           <div class="lockscreen-clock">
             <div class="weekday">Tuesday, 14 May</div>
             <div class="bigclock">9:41</div>
           </div>
           <div class="lockscreen-notification">
-            <div class="notif-header">
-              <span class="notif-icon">⚕</span>
-              <span class="notif-app">BioTrail · Emergency Card</span>
-              <span class="notif-time">now</span>
-            </div>
-            <div class="notif-title">Medical info available</div>
-            <div class="notif-body">
-              <div class="notif-row"><strong>Name:</strong> Maria K.</div>
-              <div class="notif-row"><strong>Blood type:</strong> O+</div>
-              <div class="notif-row"><strong>Allergies:</strong> Penicillin, latex</div>
-              <div class="notif-row"><strong>Medication:</strong> Metoprolol 50mg</div>
-              <div class="notif-row"><strong>Languages:</strong> 🇹🇷 → 🇩🇪</div>
+            <div class="notif-accent-bar"></div>
+            <div class="notif-content">
+              <div class="notif-header">
+                <span class="brand-square">B</span>
+                <span class="notif-app">BioTrail · Emergency</span>
+                <span class="notif-time">now</span>
+              </div>
+              <div class="notif-title">Medical info available</div>
+              <div class="notif-body">
+                <div class="notif-row"><span class="label">Name</span><span class="val">Maria K.</span></div>
+                <div class="notif-row"><span class="label">Blood type</span><span class="val">O+</span></div>
+                <div class="notif-row"><span class="label">Allergies</span><span class="val">Penicillin, latex</span></div>
+                <div class="notif-row"><span class="label">Medication</span><span class="val">Metoprolol 50mg</span></div>
+              </div>
+              <div class="notif-foot">Tap to view full card</div>
             </div>
           </div>
           <div class="lockscreen-hint">Swipe up for full card · Offline</div>
