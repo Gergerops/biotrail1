@@ -96,7 +96,7 @@ h1, h2, h3, h4 {
   line-height: 1.05;
   margin: 0;
 }
-h1 { font-size: clamp(44px, 6.4vw, 84px); }
+h1 { font-size: clamp(48px, 7.5vw, 108px); line-height: 1.02; letter-spacing: -0.025em; }
 h2 { font-size: clamp(34px, 4.8vw, 58px); line-height: 1.08; }
 h3 { font-size: clamp(22px, 2.4vw, 30px); line-height: 1.2; }
 p { margin: 0; }
@@ -668,7 +668,7 @@ footer { border-top: 1px solid var(--c-line); padding: 48px 0 40px; background: 
 @media (max-width: 520px) {
   .nav-inner { padding: 14px 18px; }
   .lang-trigger span:not(.lang-flag) { display: none; }
-  h1 { font-size: 40px; }
+  h1 { font-size: 48px; }
   h2 { font-size: 32px; }
   .step-text .num { font-size: 48px; }
   .plan { padding: 32px 26px 36px; }
@@ -845,96 +845,108 @@ footer { border-top: 1px solid var(--c-line); padding: 48px 0 40px; background: 
   background-size: contain;
   flex-shrink: 0;
 }
-.lockscreen {
-  background: #000;
-  border-radius: 36px;
-  padding: 54px 20px 26px;
-  box-shadow: var(--shadow-lg), 0 0 0 6px rgba(255, 255, 255, 0.05);
-  color: #fff;
+/* LOCKSCREEN MOCKUP (Emergency section) ─────────────── */
+.lockscreen-mockup {
   max-width: 320px;
   margin: 0 auto;
-  position: relative;
-  aspect-ratio: 9 / 17;
-  display: flex;
-  flex-direction: column;
-}
-.lockscreen::before {
-  content: '';
-  position: absolute;
-  top: 16px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 88px;
-  height: 26px;
-  background: #000;
-  border-radius: 0 0 16px 16px;
-}
-.lockscreen-time {
-  font-family: var(--f-sans);
-  font-size: 56px;
-  font-weight: 200;
-  letter-spacing: -0.04em;
-  text-align: center;
-  line-height: 1;
-}
-.lockscreen-date {
-  font-size: 12.5px;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.65);
-  letter-spacing: 0.04em;
-  margin-top: 6px;
-  margin-bottom: 22px;
-}
-.lockscreen-card {
-  background: rgba(255, 255, 255, 0.13);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 18px;
-  padding: 14px 14px 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.lockscreen-card .head {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 10.5px;
-  color: rgba(255, 255, 255, 0.78);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-.lockscreen-card .head::before {
-  content: '';
-  width: 16px;
-  height: 16px;
-  background: var(--c-accent);
-  border-radius: 5px;
-  flex-shrink: 0;
-}
-.lockscreen-card .ls-title {
-  font-family: var(--f-serif);
-  font-style: italic;
-  font-size: 15px;
+  background: linear-gradient(180deg, #1a1a2e 0%, #0a0a14 100%);
+  border-radius: 38px;
+  padding: 28px 22px 32px;
+  box-shadow: 0 30px 80px -20px rgba(0,0,0,0.6), 0 0 0 8px #0a0a14, 0 0 0 9px #2a2a3a;
   color: #fff;
-  line-height: 1.3;
-}
-.lockscreen-card .ls-rows {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+  position: relative;
+  aspect-ratio: 9 / 16;
   display: flex;
   flex-direction: column;
-  margin-top: 4px;
 }
-.lockscreen-card .ls-rows .row {
+
+.lockscreen-statusbar {
   display: flex;
   justify-content: space-between;
-  font-size: 11.5px;
-  padding: 5px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.95);
+  padding: 0 8px 24px;
 }
-.lockscreen-card .ls-rows .row:first-child { border-top: 0; }
-.lockscreen-card .ls-rows .lbl { color: rgba(255, 255, 255, 0.55); }
-.lockscreen-card .ls-rows .val { color: #fff; font-weight: 500; }
+
+.lockscreen-clock {
+  text-align: center;
+  padding: 8px 0 36px;
+}
+.lockscreen-clock .weekday {
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+  font-weight: 500;
+}
+.lockscreen-clock .bigclock {
+  font-size: 72px;
+  font-weight: 200;
+  line-height: 1;
+  margin-top: 4px;
+  letter-spacing: -0.04em;
+}
+
+.lockscreen-notification {
+  background: rgba(255,255,255,0.16);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 16px;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+}
+
+.notif-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.7);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.notif-icon {
+  width: 18px;
+  height: 18px;
+  background: var(--c-accent);
+  color: #0a0a14;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+}
+.notif-app { flex: 1; }
+
+.notif-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.notif-body {
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.92);
+}
+.notif-row {
+  padding: 2px 0;
+}
+.notif-row strong {
+  color: rgba(255,255,255,0.6);
+  font-weight: 500;
+  margin-right: 4px;
+}
+
+.lockscreen-hint {
+  text-align: center;
+  font-size: 11px;
+  color: rgba(255,255,255,0.45);
+  margin-top: auto;
+  padding-top: 16px;
+}
 
 /* PRICING TOGGLE / SUBTITLE-NOTE / TRIAL-NOTE ─────────── */
 .pricing-toggle-wrap { display: flex; justify-content: center; margin-bottom: 40px; }
@@ -983,6 +995,7 @@ footer { border-top: 1px solid var(--c-line); padding: 48px 0 40px; background: 
   .compare-table { display: none; }
   .compare-stack { display: flex; flex-direction: column; gap: 14px; max-width: 480px; margin: 0 auto; }
   .emergency-grid { grid-template-columns: 1fr; gap: 48px; }
-  .lockscreen { max-width: 280px; }
+  .lockscreen-mockup { max-width: 280px; }
+  .lockscreen-clock .bigclock { font-size: 60px; }
   .pricing-toggle button { padding: 9px 14px; font-size: 12.5px; }
 }
