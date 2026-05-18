@@ -21,8 +21,11 @@
     "trust_1": "Während der Beta kostenlos",
     "trust_2": "DSGVO-konform by Design",
     "trust_3": "Made in Frankfurt",
-    "badge_label": "Patientin · Erster Termin",
-    "badge_quote": "Zum ersten Mal hat meine Ärztin meine Geschichte wirklich verstanden."
+    "quote_text": "Zum ersten Mal hat mein Arzt meine Vorgeschichte wirklich verstanden.",
+    "quote_name": "Amira",
+    "quote_meta": "Damaskus → Frankfurt, 2 Jahre",
+    "quote_initial": "A",
+    "quote_color": "#E8F0FA"
   },
   "strip": {
     "label": "Ein Problem, das niemand sieht",

@@ -21,8 +21,11 @@
     "trust_1": "Free during beta",
     "trust_2": "GDPR-first by design",
     "trust_3": "Built in Frankfurt",
-    "badge_label": "Patient · First visit",
-    "badge_quote": "For the first time, my doctor actually understood my history."
+    "quote_text": "For the first time, my doctor actually understood my history.",
+    "quote_name": "Amira",
+    "quote_meta": "Damascus → Frankfurt, 2 years",
+    "quote_initial": "A",
+    "quote_color": "#E8F0FA"
   },
   "strip": {
     "label": "A problem hiding in plain sight",

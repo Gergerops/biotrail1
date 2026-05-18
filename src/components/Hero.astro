@@ -27,6 +27,16 @@ const dict = getDict(locale);
           <span>{dict.hero.trust_2}</span>
           <span>{dict.hero.trust_3}</span>
         </div>
+        <div class="hero-quote">
+          <div class="hero-quote-avatar" style={`background: ${dict.hero.quote_color};`}>{dict.hero.quote_initial}</div>
+          <div class="hero-quote-content">
+            <p class="hero-quote-text">"{dict.hero.quote_text}"</p>
+            <div class="hero-quote-author">
+              <span class="hero-quote-name">{dict.hero.quote_name}</span>
+              <span class="hero-quote-meta">{dict.hero.quote_meta}</span>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="hero-visual reveal">
@@ -37,10 +47,6 @@ const dict = getDict(locale);
           width="800"
           height="1000"
         />
-        <div class="hero-badge">
-          <div class="label">{dict.hero.badge_label}</div>
-          <div class="quote">"{dict.hero.badge_quote}"</div>
-        </div>
       </div>
     </div>
   </div>
