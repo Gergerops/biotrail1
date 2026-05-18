@@ -359,13 +359,7 @@ section.block-cream {
   );
 }
 section.block-warm {
-  background: linear-gradient(
-    to bottom,
-    var(--c-bg) 0%,
-    var(--c-bg-warm) 8%,
-    var(--c-bg-warm) 92%,
-    var(--c-bg) 100%
-  );
+  background: var(--c-bg-warm);
 }
 section.block-dark {
   background: linear-gradient(
