@@ -14,10 +14,8 @@
   },
   "hero": {
     "eyebrow": "For newcomers to Germany",
-    "title_a": "Your medical history,",
-    "title_b": "ready",
-    "title_c": "in every language.",
-    "subtitle": "BioTrail organizes and translates your records so doctors understand you — and you understand them — from the very first appointment.",
+    "title": "Your medical history. Translated. <em>Always</em> with you.",
+    "subtitle": "20+ languages. Every Befund, prescription, and insurance bill — explained in words you actually understand.",
     "cta_primary": "Get early access",
     "cta_secondary": "See how it works",
     "trust_1": "Free during beta",

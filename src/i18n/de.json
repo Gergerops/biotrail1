@@ -14,10 +14,8 @@
   },
   "hero": {
     "eyebrow": "Für alle, die neu in Deutschland sind",
-    "title_a": "Deine Krankengeschichte.",
-    "title_b": "Bereit",
-    "title_c": "in jeder Sprache.",
-    "subtitle": "BioTrail organisiert und übersetzt deine Unterlagen — damit Ärzte dich verstehen und du sie verstehst, vom allerersten Termin an.",
+    "title": "Deine Krankengeschichte. Übersetzt. <em>Immer</em> bei dir.",
+    "subtitle": "20+ Sprachen. Jeder Befund, jedes Rezept, jede Versicherungsrechnung — erklärt in Worten, die du wirklich verstehst.",
     "cta_primary": "Early Access sichern",
     "cta_secondary": "So funktioniert's",
     "trust_1": "Während der Beta kostenlos",

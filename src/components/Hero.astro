@@ -14,10 +14,7 @@ const dict = getDict(locale);
     <div class="hero-grid">
       <div class="hero-copy reveal">
         <span class="eyebrow">{dict.hero.eyebrow}</span>
-        <h1>
-          {dict.hero.title_a}<br />
-          <span class="accent">{dict.hero.title_b}</span> {dict.hero.title_c}
-        </h1>
+        <h1 set:html={dict.hero.title}></h1>
         <p class="hero-sub">{dict.hero.subtitle}</p>
         <div class="hero-cta">
           <button class="btn btn-primary btn-arrow" data-open-modal data-plan="hero">
