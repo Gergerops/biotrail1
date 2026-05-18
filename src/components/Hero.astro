@@ -9,10 +9,10 @@ const { locale } = Astro.props;
 const dict = getDict(locale);
 ---
 
-<header class="hero">
+<section class="hero">
   <div class="container">
     <div class="hero-grid">
-      <div class="hero-copy reveal">
+      <div class="hero-text reveal">
         <span class="eyebrow">{dict.hero.eyebrow}</span>
         <h1 set:html={dict.hero.title}></h1>
         <p class="hero-sub">{dict.hero.subtitle}</p>
@@ -27,6 +27,16 @@ const dict = getDict(locale);
           <span>{dict.hero.trust_2}</span>
           <span>{dict.hero.trust_3}</span>
         </div>
+      </div>
+
+      <div class="hero-media reveal">
+        <img
+          src="/hero.png"
+          alt="A doctor and patient in conversation in a sunlit Frankfurt clinic"
+          loading="eager"
+          width="800"
+          height="1000"
+        />
         <div class="hero-quote">
           <div class="hero-quote-avatar" style={`background: ${dict.hero.quote_color};`}>{dict.hero.quote_initial}</div>
           <div class="hero-quote-content">
@@ -38,16 +48,6 @@ const dict = getDict(locale);
           </div>
         </div>
       </div>
-
-      <div class="hero-visual reveal">
-        <img
-          src="/hero.png"
-          alt="A doctor and patient in conversation in a sunlit Frankfurt clinic"
-          loading="eager"
-          width="800"
-          height="1000"
-        />
-      </div>
     </div>
   </div>
-</header>
+</section>
