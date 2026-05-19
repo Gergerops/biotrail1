@@ -186,14 +186,32 @@ const dict = getDict(locale);
         submitBtn.disabled = true;
 
         try {
-          await fetch('/api/capture', {
+          const res = await fetch('/api/capture', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, plan: 'cta_final', locale, source: 'footer_cta' }),
           });
+          if (!res.ok) throw new Error('capture failed');
           ctaForm.innerHTML = '<p class="success-msg">✓ ' + email + '</p>';
-          if (window.plausible) {
-            window.plausible('signup', { props: { plan: 'cta_final', locale, source: 'footer_cta' } });
+
+          // Google Ads conversion event — only fires after confirmed API success
+          if (typeof window.gtag === 'function') {
+            window.gtag('event', 'conversion', {
+              send_to: 'AW-18173922859/GoVFCPbR4a8cEKucgNpD',
+              value: 5.0,
+              currency: 'EUR',
+              transaction_id: '',
+            });
+            window.gtag('event', 'signup', {
+              plan: 'footer_cta',
+              email_domain: email.split('@')[1],
+            });
+            console.log('[conversion] fired for plan:', 'footer_cta');
+          }
+
+          // Plausible — parallel signal
+          if (typeof window.plausible === 'function') {
+            window.plausible('Signup', { props: { plan: 'footer_cta' } });
           }
         } catch (err) {
           submitBtn.disabled = false;
