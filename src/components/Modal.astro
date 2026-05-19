@@ -150,9 +150,24 @@ const dict = getDict(locale);
         defaultView.style.display = 'none';
         successView.style.display = '';
 
-        // Plausible conversion event — THIS is the smoke-test signal
-        if (window.plausible) {
-          window.plausible('signup', { props: { plan: currentPlan, locale, source: 'modal' } });
+        // Google Ads conversion event — only fires after confirmed API success
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'conversion', {
+            send_to: 'AW-18173922859/GoVFCPbR4a8cEKucgNpD',
+            value: 5.0,
+            currency: 'EUR',
+            transaction_id: '',
+          });
+          window.gtag('event', 'signup', {
+            plan: currentPlan,
+            email_domain: email.split('@')[1],
+          });
+          console.log('[conversion] fired for plan:', currentPlan);
+        }
+
+        // Plausible — parallel signal
+        if (typeof window.plausible === 'function') {
+          window.plausible('Signup', { props: { plan: currentPlan } });
         }
       } catch (err) {
         errorEl.classList.add('show');
